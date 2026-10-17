@@ -167,7 +167,8 @@ async function submit(){
  if(!API){finish();return}
  st.sending=true;btn.disabled=true;btn.textContent='Đang gửi…';
  try{
-  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:st.key,data:st.a}),redirect:'follow'});
+  /* dấu ' đầu SĐT: để Google Sheet giữ số 0 đầu */
+  const r=await fetch(API,{method:'POST',headers:{'Content-Type':'text/plain;charset=utf-8'},body:JSON.stringify({type:st.key,data:Object.assign({},st.a,st.a.sdt?{sdt:"'"+st.a.sdt}:{})}),redirect:'follow'});
   const j=await r.json();
   if(!j.ok)throw new Error(j.error||'loi');
   draftSet('sent'+st.key,1);draftSet('d'+st.key,null);finish();
