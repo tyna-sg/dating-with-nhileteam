@@ -1,0 +1,616 @@
+<title>Dating with NhiLe Team 18/10</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;500;600;800&family=Patrick+Hand&family=JetBrains+Mono:wght@500;700&display=swap">
+<style>
+/* Layout: một trang cuộn, thanh điều hướng dính trên đầu. Màu theo giai đoạn: Kết nối (xanh ngọc), Cầu (vàng), Nối kết (đỏ lì xì). */
+:root{
+  --bg:#F2F4F1; --surface:#FFFFFF; --ink:#14221E; --muted:#586863; --line:#D6DDD8;
+  --kn:#1B6B62; --kn-soft:#DAEDE9; --br:#8C6A12; --br-soft:#F4EACB; --nk:#B5301D; --nk-soft:#F9DDD6;
+  --ok:#1F7A3E; --ok-soft:#DCF0E2; --bad:#B5301D; --bad-soft:#F9DDD6;
+  --paper:#FFFFFF; --paper-ink:#1B1B1B; --paper-line:#9AA5A0;
+  --f-body:'Be Vietnam Pro','Inter',system-ui,-apple-system,'Segoe UI',sans-serif;
+  --f-mono:'JetBrains Mono',ui-monospace,Menlo,Consolas,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0F1614; --surface:#172220; --ink:#E7EEEA; --muted:#9BADA6; --line:#2B3A35;
+  --kn:#55BBAD; --kn-soft:#173531; --br:#DDBC55; --br-soft:#352D12; --nk:#F27A63; --nk-soft:#3B1D17;
+  --ok:#62C583; --ok-soft:#16321F; --bad:#F27A63; --bad-soft:#3B1D17; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0F1614; --surface:#172220; --ink:#E7EEEA; --muted:#9BADA6; --line:#2B3A35;
+  --kn:#55BBAD; --kn-soft:#173531; --br:#DDBC55; --br-soft:#352D12; --nk:#F27A63; --nk-soft:#3B1D17;
+  --ok:#62C583; --ok-soft:#16321F; --bad:#F27A63; --bad-soft:#3B1D17; color-scheme:dark}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:64px}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:15px;line-height:1.55;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:30;background:var(--bg)}
+.wrap{max-width:980px;margin:0 auto}
+h1,h2,h3{line-height:1.2;text-wrap:balance;margin:0}
+h2{font-size:22px;font-weight:800;letter-spacing:-.01em}
+h3{font-size:16px;font-weight:600}
+p{margin:0}
+.mono{font-family:var(--f-mono);font-variant-numeric:tabular-nums}
+.eyebrow{font-size:12px;letter-spacing:.08em;text-transform:uppercase;font-weight:600;color:var(--muted)}
+button{font:inherit;color:inherit;cursor:pointer}
+:focus-visible{outline:2px solid var(--kn);outline-offset:2px}
+
+/* nav */
+nav{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;background:var(--bg);border-bottom:1px solid var(--line);margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding:0 max(16px,env(safe-area-inset-left,0px))}
+nav .in{max-width:980px;margin:0 auto;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+nav a{white-space:nowrap;padding:12px 10px;font-size:13.5px;font-weight:500;color:var(--muted);text-decoration:none;border-bottom:2px solid transparent}
+nav a:hover,nav a.on{color:var(--ink);border-bottom-color:var(--ink)}
+
+/* hero */
+header.hero{padding:36px 0 8px}
+.hero h1{font-size:clamp(30px,6vw,46px);font-weight:800;letter-spacing:-.02em}
+.hero .sub{margin-top:10px;font-size:17px;max-width:62ch}
+.facts{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.fact{background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:8px 12px;font-size:13.5px}
+.fact b{font-family:var(--f-mono);font-weight:700;margin-right:6px}
+.arc{display:grid;grid-template-columns:1fr 1fr;gap:0;margin-top:24px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.arc>div{padding:14px 16px}
+.arc .a{background:var(--kn-soft)} .arc .b{background:var(--nk-soft)}
+.arc b{display:block;font-size:17px}
+.arc .a b{color:var(--kn)} .arc .b b{color:var(--nk)}
+.arc small{color:var(--muted);font-size:13px}
+@media(max-width:560px){.arc{grid-template-columns:1fr}}
+
+section{padding-top:44px}
+.lead{color:var(--muted);margin-top:6px;max-width:68ch}
+
+/* roster */
+.roster{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:10px;margin-top:16px}
+.person{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:12px 14px;min-width:0}
+.person b{display:block;font-size:15px}
+.person .role{font-size:12.5px;color:var(--muted);margin:2px 0 6px}
+.person p{font-size:13.5px}
+.person.remote{border-style:dashed}
+
+/* proportional strip */
+.strip{display:flex;gap:3px;margin-top:18px}
+.seg{flex:var(--w) 1 0;min-width:0;border:0;border-radius:4px;padding:10px 6px 9px;text-align:left;background:var(--c-soft);color:var(--c);border-top:4px solid var(--c);cursor:pointer}
+.seg .t{font-family:var(--f-mono);font-size:11px;display:block;opacity:.9;white-space:nowrap;overflow:hidden}
+.seg .n{font-size:12px;font-weight:600;display:block;margin-top:2px;line-height:1.25;overflow:hidden;text-overflow:ellipsis}
+.seg:hover,.seg.on{filter:brightness(.97);box-shadow:inset 0 0 0 2px var(--c)}
+.p-kn{--c:var(--kn);--c-soft:var(--kn-soft)} .p-br{--c:var(--br);--c-soft:var(--br-soft)} .p-nk{--c:var(--nk);--c-soft:var(--nk-soft)}
+.legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:10px;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:6px;vertical-align:-1px}
+@media(max-width:560px){.seg .t,.seg .nn{display:none}.seg .n{font-size:15px;font-weight:800;text-align:center;margin:0}.seg{padding:12px 2px}}
+
+/* swimlane */
+.tablewrap{overflow-x:auto;margin-top:16px;border:1px solid var(--line);border-radius:8px;background:var(--surface)}
+table.lane{border-collapse:separate;border-spacing:0;min-width:900px;width:100%;font-size:13px}
+.lane th,.lane td{padding:9px 10px;vertical-align:top;border-bottom:1px solid var(--line);border-right:1px solid var(--line);text-align:left}
+.lane tr:last-child td,.lane tr:last-child th{border-bottom:0}
+.lane th:last-child,.lane td:last-child{border-right:0}
+.lane thead th{font-size:12px;font-weight:600;position:sticky;top:0}
+.lane thead th.p-kn{background:var(--kn-soft);color:var(--kn)}.lane thead th.p-br{background:var(--br-soft);color:var(--br)}.lane thead th.p-nk{background:var(--nk-soft);color:var(--nk)}
+.lane tbody th{position:sticky;left:0;background:var(--surface);min-width:112px;font-weight:600;z-index:1}
+.lane td.e{color:var(--muted)}
+.lane td.hot{background:var(--bg)}
+
+/* detail */
+.tabs{display:flex;gap:6px;overflow-x:auto;margin-top:18px;padding-bottom:4px}
+.tab{flex:0 0 auto;border:1px solid var(--line);background:var(--surface);border-radius:999px;padding:7px 14px;font-size:13.5px;font-weight:500}
+.tab[aria-selected="true"]{background:var(--c);border-color:var(--c);color:var(--surface)}
+.panel{background:var(--surface);border:1px solid var(--line);border-top:5px solid var(--c);border-radius:8px;margin-top:10px;padding:20px 18px}
+@media(min-width:700px){.panel{padding:24px 26px}}
+.panel .head{display:flex;flex-wrap:wrap;gap:8px 14px;align-items:baseline}
+.panel .head h3{font-size:21px;font-weight:800;color:var(--c)}
+.panel .head .mono{font-size:14px}
+.pill{display:inline-block;font-size:11.5px;font-weight:600;padding:2px 9px;border-radius:999px;background:var(--c-soft);color:var(--c)}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:12px}
+.chip{font-size:12.5px;border:1px solid var(--line);border-radius:4px;padding:2px 8px;background:var(--bg)}
+.chip.tool{border-color:var(--c);color:var(--c);font-weight:600;background:var(--surface)}
+.cols{display:grid;grid-template-columns:1fr;gap:18px;margin-top:16px}
+@media(min-width:760px){.cols{grid-template-columns:1.25fr 1fr}}
+.cols>div{min-width:0}
+.lbl{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600;color:var(--muted);margin-bottom:8px}
+.says{display:flex;flex-direction:column;gap:8px}
+.say{background:var(--c-soft);border-radius:6px;padding:10px 12px;font-size:14.5px}
+.steps{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:6px}
+.steps li{display:flex;gap:10px;align-items:flex-start;padding:8px 10px;border:1px solid var(--line);border-radius:6px;font-size:14px}
+.steps input{margin-top:4px;accent-color:var(--c);flex:0 0 auto;width:16px;height:16px}
+.steps .m{flex:0 0 auto;font-family:var(--f-mono);font-size:12px;font-weight:700;color:var(--c);min-width:34px;padding-top:2px}
+.steps li.done span.tx{color:var(--muted);text-decoration:line-through}
+.who{display:flex;flex-direction:column;gap:6px;font-size:13.5px}
+.who div{display:flex;gap:8px}.who b{flex:0 0 78px;font-weight:600}
+.off{margin-top:16px;border-left:4px solid var(--br);background:var(--br-soft);padding:11px 14px;border-radius:0 6px 6px 0;font-size:14px}
+.off b{display:block;font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--br);margin-bottom:3px}
+.timer{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:18px;padding-top:16px;border-top:1px solid var(--line)}
+.clock{font-family:var(--f-mono);font-size:30px;font-weight:700;min-width:96px;color:var(--ink)}
+.clock.warn{color:var(--bad)}
+.btn{border:1px solid var(--ink);background:var(--ink);color:var(--bg);border-radius:6px;padding:8px 14px;font-size:13.5px;font-weight:600}
+.btn.alt{background:transparent;color:var(--ink);border-color:var(--line)}
+.btn:hover{filter:brightness(1.12)}
+.timer select{font:inherit;font-size:13px;padding:7px;border:1px solid var(--line);border-radius:6px;background:var(--surface);color:var(--ink)}
+.timer label{font-size:12.5px;color:var(--muted)}
+.steps mark.ngan{background:var(--c-soft);color:var(--c);font-weight:600;padding:1px 5px;border-radius:4px}
+.hint{font-size:12.5px;color:var(--muted)}
+.pn{display:flex;justify-content:space-between;gap:10px;margin-top:14px}
+
+/* paper templates */
+.kit{display:grid;gap:22px;margin-top:20px}
+.item{background:var(--surface);border:1px solid var(--line);border-radius:8px;padding:18px;min-width:0}
+.item header{display:flex;flex-wrap:wrap;gap:6px 12px;align-items:baseline;margin-bottom:4px}
+.item h3{font-size:17px}
+.meta{font-size:12.5px;color:var(--muted)}
+.item .why{font-size:14px;margin:6px 0 14px;max-width:70ch}
+.scroll{overflow-x:auto;padding:2px}
+.paper{background:var(--paper);color:var(--paper-ink);border:1px solid var(--paper-line);box-shadow:0 1px 0 var(--line),0 6px 14px rgba(0,0,0,.08);padding:16px 18px;font-size:13px;border-radius:2px}
+.paper .ph{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;align-items:flex-end;border-bottom:2px solid var(--paper-ink);padding-bottom:8px;margin-bottom:8px}
+.paper .ph b{font-size:15px}
+.fill{display:inline-block;min-width:90px;border-bottom:1px solid var(--paper-ink);height:1.1em;vertical-align:-2px}
+.paper table{border-collapse:collapse;width:100%;min-width:640px}
+.paper th,.paper td{border:1px solid var(--paper-line);padding:3px 6px;text-align:left;font-size:12px}
+.paper th{background:#EDF0EE;color:#1B1B1B;font-weight:600}
+.paper td{height:25px}
+.paper td.n{width:26px;text-align:center;color:#555}
+.paper .foot{margin-top:10px;display:flex;flex-wrap:wrap;gap:6px 24px;font-size:12.5px}
+.row2{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px}
+.card{width:100%;max-width:300px;aspect-ratio:105/148;display:flex;flex-direction:column;gap:12px;padding:20px 20px}
+.card h4{margin:0;font-size:14px;letter-spacing:.02em}
+.card .l{font-size:12.5px}
+.card .lines{border-bottom:1px solid var(--paper-ink);height:26px}
+.card .big{flex:1;border:1px solid var(--paper-line);border-radius:3px}
+.name{max-width:300px;text-align:center;padding:26px 16px 22px;position:relative}
+.name .hello{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:#555}
+.name .nm{height:34px;border-bottom:1px solid var(--paper-ink);margin:14px 12px 0}
+.dot{position:absolute;right:12px;top:12px;width:18px;height:18px;border-radius:50%;background:#E5A100}
+.hu{max-width:300px;text-align:center;padding:30px 18px;background:var(--paper)}
+.hu .n{font-size:12px;color:#777;letter-spacing:.08em}
+.hu .q{font-size:15px;font-weight:600;margin-top:10px}
+.env{max-width:340px}
+.env .lines{border-bottom:1px solid var(--paper-ink);height:24px;margin-top:6px}
+.hand{font-family:'Patrick Hand','Be Vietnam Pro',cursive;font-size:16px;line-height:1.3;color:#1F3A8A}
+.mini{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ho{width:100%;max-width:560px}
+.calc{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:10px}
+.calc label{font-size:12.5px;font-weight:600;display:flex;flex-direction:column;gap:4px}
+.calc input{font:inherit;font-family:var(--f-mono);padding:8px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.out{margin-top:12px;background:var(--br-soft);border-radius:6px;padding:12px 14px;font-size:15px}
+
+/* forms */
+.forms{display:grid;grid-template-columns:repeat(auto-fit,minmax(310px,1fr));gap:22px;margin-top:20px}
+.phone{background:var(--surface);border:1px solid var(--line);border-radius:14px;overflow:hidden;min-width:0;display:flex;flex-direction:column}
+.phone .bar{background:var(--c);color:var(--surface);padding:14px 16px}
+.phone .bar b{display:block;font-size:16px}.phone .bar span{font-size:12.5px;opacity:.9}
+.phone .body{padding:14px 16px 18px;display:flex;flex-direction:column;gap:14px}
+.q{display:flex;flex-direction:column;gap:5px}
+.q>label,.q>.ql{font-size:13.5px;font-weight:600}
+.q .tag{font-size:11.5px;font-weight:500;color:var(--muted);display:flex;gap:6px;flex-wrap:wrap}
+.tag .vis{color:var(--ok);background:var(--ok-soft);padding:0 6px;border-radius:3px}
+.tag .hid{color:var(--bad);background:var(--bad-soft);padding:0 6px;border-radius:3px}
+.q input[type=text],.q textarea,.q select{font:inherit;font-size:14px;padding:9px 10px;border:1px solid var(--line);border-radius:6px;background:var(--bg);color:var(--ink);width:100%}
+.q textarea{min-height:56px;resize:vertical}
+.opt{display:flex;gap:8px;align-items:flex-start;font-size:14px;padding:3px 0}
+.opt input{margin-top:3px;accent-color:var(--c)}
+.branch{border-left:3px solid var(--c);padding-left:12px;display:flex;flex-direction:column;gap:6px}
+.send{align-self:flex-start;background:var(--c);color:var(--surface);border:0;border-radius:6px;padding:9px 18px;font-weight:600}
+.thanks{padding:22px 16px;text-align:center;font-size:14px}
+.copyrow{display:flex;flex-wrap:wrap;gap:8px;margin-top:12px;align-items:center}
+pre.prompt{background:var(--bg);border:1px solid var(--line);border-radius:6px;padding:12px;font-family:var(--f-mono);font-size:12px;white-space:pre-wrap;overflow-wrap:anywhere;margin:10px 0 0}
+.dir{border:1px solid var(--line);border-radius:8px;padding:12px 14px;background:var(--bg);font-size:13.5px;display:flex;flex-direction:column;gap:3px}
+.dir .nm{font-size:16px;font-weight:800}
+.dir .meet{margin-top:6px;padding-top:6px;border-top:1px dashed var(--line);font-size:13px}
+
+/* fallback */
+details.fb{background:var(--surface);border:1px solid var(--line);border-radius:8px;margin-top:8px}
+details.fb summary{padding:12px 14px;font-weight:600;cursor:pointer;font-size:14.5px;list-style-position:inside}
+details.fb div{padding:0 14px 14px;font-size:14px;max-width:72ch}
+.open{margin-top:16px;display:flex;flex-direction:column;gap:6px}
+.open div{display:flex;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:6px;padding:9px 12px;font-size:14px}
+.open b{flex:0 0 130px}
+@media(max-width:560px){.open div{flex-direction:column;gap:2px}.open b{flex:none}}
+.rules{margin-top:16px;display:grid;gap:8px}
+.rules div{background:var(--bad-soft);border-radius:6px;padding:9px 12px;font-size:14px;display:flex;gap:10px}
+.rules b{color:var(--bad);flex:0 0 auto}
+footer{margin-top:50px;font-size:12.5px;color:var(--muted);border-top:1px solid var(--line);padding-top:14px}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+
+<div class="wrap">
+<nav><div class="in" id="nav">
+  <a href="#tong-quan">Tổng quan</a><a href="#ai-lam-gi">Ai làm gì</a><a href="#lo-trinh">Từng mục</a><a href="#giay">Mẫu giấy</a><a href="#form">Mẫu form</a><a href="#du-phong">Dự phòng</a>
+</div></nav>
+
+<header class="hero" id="tong-quan">
+  <div class="eyebrow">Chủ nhật 18/10/2026</div>
+  <h1>Dating with NhiLe Team</h1>
+  <p class="sub">Một buổi, một đích: khách <b>kết nối</b> với người khác, rồi <b>nối kết</b> với chính mình. Buổi này nhỏ, 15 người, và khoảng 12 trong đó đã quen nhau.</p>
+  <div class="facts">
+    <div class="fact"><b>12:30–14:35</b>2 tiếng 5 phút</div>
+    <div class="fact"><b>15</b>khách (khoảng 3 người mới)</div>
+    <div class="fact"><b>7</b>mục</div>
+    <div class="fact"><b>0</b>máy chiếu, mọi thứ trên giấy và điện thoại</div>
+  </div>
+  <div class="arc">
+    <div class="a"><b>Kết nối</b>Mục 1 đến 3, người với người. <small>12:30–13:15</small></div>
+    <div class="b"><b>Nối kết</b>Mục 6 và 7, quay vào chính mình. <small>13:45–14:35</small></div>
+  </div>
+  <p class="hint" style="margin-top:8px">Mục 4 và 5 là cái cầu giữa hai nửa: AI thu thông tin cả phòng, rồi mọi người hạ nhịp.</p>
+
+  <div class="strip" id="strip" aria-label="Lộ trình theo tỉ lệ thời gian"></div>
+  <div class="legend"><span><i style="background:var(--kn)"></i>Kết nối</span><span><i style="background:var(--br)"></i>Cầu</span><span><i style="background:var(--nk)"></i>Nối kết</span><span>Bấm vào một mục để xem chi tiết</span></div>
+</header>
+
+<section id="ai-lam-gi">
+  <h2>Ai làm gì</h2>
+  <p class="lead">Mỗi người nhớ phần của mình là đủ. Không ai phải theo dõi toàn bộ buổi.</p>
+  <div class="roster" id="roster"></div>
+  <div class="tablewrap"><table class="lane" id="lane"></table></div>
+  <div class="rules" id="rules"></div>
+</section>
+
+<section id="lo-trinh">
+  <h2>Từng mục, bước và câu nói</h2>
+  <p class="lead">Chọn mục đang chạy. Đọc xong thì chuyển mục tiếp. Đồng hồ ở cuối mỗi mục để tập thử, có thể tua nhanh.</p>
+  <div class="tabs" id="tabs" role="tablist"></div>
+  <div class="panel" id="panel"></div>
+  <div class="pn"><button class="btn alt" id="prev">Mục trước</button><button class="btn alt" id="next">Mục sau</button></div>
+</section>
+
+<section id="giay">
+  <h2>Mẫu giấy</h2>
+  <p class="lead">Những thứ khách cầm trên tay hôm đó. Phần dưới là hình dáng thật của từng tờ, kèm số lượng in. Bản PDF in sẵn Thùy gửi riêng.</p>
+  <div class="kit">
+
+    <div class="item">
+      <header><h3>1. Thẻ networking</h3><span class="meta">Mục 3 · mỗi khách 1 tờ · in 17 tờ (15 + 2 dự phòng) · A4 ngang</span></header>
+      <p class="why">Đây là nhiệm vụ của khách: thu đủ thông tin 14 người còn lại. 5 cột trùng 5 câu trong bản đồ kết nối, để lát nữa khách đem so với bản AI. Ô giờ ở đầu tờ là để biết thật sự mất bao nhiêu phút.</p>
+      <div class="scroll"><div class="paper">
+        <div class="ph"><b>Nhiệm vụ: thu đủ thông tin mọi người trong phòng (14 người)</b><span>Tên mình: <span class="fill"></span></span></div>
+        <div style="display:flex;flex-wrap:wrap;gap:6px 24px;margin-bottom:8px;font-size:12.5px"><span>Giờ bắt đầu: <span class="fill" style="min-width:60px"></span></span><span>Giờ đủ rồi (nếu đủ): <span class="fill" style="min-width:60px"></span></span></div>
+        <table id="netTable"></table>
+        <div class="foot"><span>Đủ rồi thì giơ tay và ghi giờ ở trên.</span><span>Vòng 1: ghi từ cặp. Vòng 2: ghi thêm từ lời giới thiệu.</span></div>
+      </div></div>
+    </div>
+
+    <div class="item">
+      <header><h3>2. Thẻ tò mò</h3><span class="meta">Mục 4 phát và viết, mục 5 đem đi hỏi · in 16 tờ (15 + 1 dự phòng) · A6</span></header>
+      <p class="why">Bản đồ kết nối cho khách một cái tên và một lý do để gặp. Thẻ tò mò là bước tiếp: khách tự nghĩ một câu hỏi mình tò mò về người đó. Câu này AI không viết thay được, và khách không cần nhớ hay quen biết gì từ trước. Giờ nghỉ, khách gấp thẻ lại, đưa tận tay người đó và hỏi luôn. Người nhận giữ thẻ. Dòng “Nhắn mình ở” để người nhận nhắn lại sau buổi nếu muốn. Dòng này tự nguyện, chỉ đưa tận tay người nhận, không lên bản đồ kết nối.</p>
+      <div class="row2"><div><div class="eyebrow" style="margin-bottom:6px">Mẫu trống (bản in)</div><div class="paper card">
+        <h4>THẺ TÒ MÒ</h4>
+        <div class="l">Người mình muốn hỏi thêm (AI gợi ý, hoặc mình tự chọn):</div><div class="lines"></div>
+        <div class="l">Mình tò mò muốn hỏi họ:</div><div class="big"></div>
+        <div class="l">Nhắn mình ở (ví dụ Telegram @tên, không bắt buộc): <span class="fill" style="min-width:120px"></span></div>
+        <div class="l">Từ: <span class="fill" style="min-width:120px"></span></div>
+      </div></div>
+      <div><div class="eyebrow" style="margin-bottom:6px">Ví dụ đã điền (tên giả)</div><div class="paper card">
+        <h4>THẺ TÒ MÒ</h4>
+        <div class="l">Người mình muốn hỏi thêm (AI gợi ý, hoặc mình tự chọn):</div><div class="hand" style="border-bottom:1px solid var(--paper-ink);min-height:26px">Thu Hà</div>
+        <div class="l">Mình tò mò muốn hỏi họ:</div><div class="big hand" style="padding:8px 10px">Cây nến đầu tiên chị làm là cho ai, và vì sao chị bắt đầu làm đồ handmade?</div>
+        <div class="l">Nhắn mình ở (ví dụ Telegram @tên, không bắt buộc): <span class="hand">Telegram @lanchi</span></div>
+        <div class="l">Từ: <span class="hand">Lan Chi</span></div>
+      </div></div></div>
+      <div class="cols" style="margin-top:14px"><div><div class="lbl">Nên viết</div><div class="say" style="background:var(--ok-soft)">Một câu hỏi mở mà chỉ người đó trả lời được, thường bắt đầu bằng “Vì sao…”, “Làm sao…”, “Lúc đó bạn nghĩ gì…”. Chỉ cần 1 câu.</div></div>
+      <div><div class="lbl">Không nên viết</div><div class="say" style="background:var(--bad-soft)">Câu bản đồ kết nối đã trả lời rồi, như “Bạn làm nghề gì?”. Hoặc câu chỉ trả lời được “có” hay “không”.</div></div></div>
+      <p class="hint" style="margin-top:10px">Nếu có người không viết: không sao. Mục 6 không dùng thẻ này, Ngân vẫn nói câu cầu, buổi vẫn chạy. Thẻ chỉ là một việc để khách làm sau khi xem bản đồ kết nối.</p>
+    </div>
+
+    <div class="item">
+      <header><h3>3. Bao lì xì</h3><span class="meta">Mục 6 · 16 bao, mỗi bao 1 câu hỏi bên trong</span></header>
+      <p class="why">Trong mỗi bao là một mảnh giấy ghi một câu hỏi. Tám câu lấy từ bản 10/10 của Ngân. Câu thứ chín là câu hướng về cộng đồng. Ngân gửi file 8 câu cho La Hân in.</p>
+      <div class="row2"><div class="paper hu"><div class="n">BAO SỐ ___</div><div class="q">“Bạn muốn nhận hay trao giúp đỡ gì trong cộng đồng này?”</div></div>
+      <div class="paper hu"><div class="n">BAO SỐ ___</div><div class="q" style="color:#777;font-weight:400">Câu hỏi từ bản 10/10 (Ngân cung cấp)</div></div></div>
+    </div>
+
+    <div class="item">
+      <header><h3>4. Giấy viết thư và phong bì</h3><span class="meta">Mục 6 · 15 + vài tờ dư · bút dư</span></header>
+      <p class="why">Khách viết thư cho chính mình 1 năm sau, ai không thích viết thì vẽ. Ghi ngoài phong bì xong thì dán lại. Mặc định khách mang thư về.</p>
+      <div class="row2"><div class="paper env"><b>Thư cho mình</b>
+        <div class="mini"><span>Tên:</span></div><div class="lines"></div>
+        <div class="mini"><span>Đích đến hiện tại của mình:</span></div><div class="lines"></div>
+        <div class="mini"><span>Mở vào ngày: <b>18/10/2027</b></span></div>
+      </div></div>
+    </div>
+
+    <div class="item">
+      <header><h3>5. Hũ thẻ chủ đề</h3><span class="meta">Mục 2 · 1 hũ mỗi bàn (3 hũ)</span></header>
+      <p class="why">Ai bí lời ở mục 2 thì bốc một thẻ.</p>
+      <div class="chips" style="margin-top:0"><span class="chip">Món ăn tuổi thơ</span><span class="chip">Bài hát đang nghe</span><span class="chip">Điều nhỏ làm bạn vui tuần này</span><span class="chip">Nơi bạn muốn đến nhất lúc này</span><span class="chip">Một thói quen buổi sáng của bạn</span></div>
+    </div>
+
+    <div class="item">
+      <header><h3>6. Phiếu số đo thật</h3><span class="meta">La Hân điền ở mục 3, Ngân đọc ở mục 4</span></header>
+      <p class="why">Chỉ nói số đo thật của hôm đó, không nói số đoán. Điền 3 số dưới đây để xem câu Ngân sẽ nói.</p>
+      <div class="calc">
+        <label>Người đủ đầu tiên mất (phút)<input id="c1" inputmode="decimal" value="12"></label>
+        <label>Phòng trung bình được (người)<input id="c2" inputmode="numeric" value="9"></label>
+        <label>AI làm cả phòng mất (phút)<input id="c3" inputmode="decimal" value="4"></label>
+      </div>
+      <div class="out" id="calcOut"></div>
+      <p class="hint" style="margin-top:6px">Số thứ ba Thùy nhắn cùng tin XANH lúc 13:10. Số ví dụ trên chỉ để thử.</p>
+    </div>
+
+  </div>
+</section>
+
+<section id="form">
+  <h2>Mẫu form</h2>
+  <p class="lead">Hai form khách điền trên điện thoại, và bản đồ kết nối là một trang web khách gõ tên mình để tìm. Bên dưới là bản thử, bấm được như thật. Thùy dựng cả ba, Ngân không phải thao tác.</p>
+  <div class="forms">
+
+    <div class="phone p-kn" id="formA">
+      <div class="bar"><b>Dating with NhiLe Team · Check-in</b><span>Mục 1 · khách điền 1 phút · đóng lúc 12:50</span></div>
+      <div class="body" id="aBody"></div>
+    </div>
+
+    <div class="phone p-nk" id="formB">
+      <div class="bar"><b>Dating with NhiLe Team · Cuối buổi</b><span>Mục 7 · khách điền 14:25–14:35 · form mở sẵn</span></div>
+      <div class="body" id="bBody"></div>
+    </div>
+
+    <div class="phone p-br">
+      <div class="bar"><b>Bản đồ kết nối cả phòng</b><span>Mục 4 · khách quét QR, gõ tên mình · dữ liệu ví dụ</span></div>
+      <div class="body" id="dBody"></div>
+    </div>
+  </div>
+
+  <div class="item" style="margin-top:22px">
+    <header><h3>Từ Form A ra bản đồ kết nối (Thùy làm từ xa)</h3><span class="meta">Chạy lúc 12:50, sau khi đóng Form A</span></header>
+    <p class="why">Ngân và các bạn ở phòng không cần chạm vào phần này. Thùy ở nhà lấy bảng Form A, bỏ cột số điện thoại và cột “đã học Là Chính Mình chưa”, dán vào AI cùng câu lệnh dưới, rồi đưa kết quả vào trang bản đồ kết nối (dựng trên Vercel). Link và QR của trang gửi cho La Hân để in.</p>
+    <pre class="prompt" id="promptTxt">Đây là bảng thông tin 15 người trong buổi Dating with NhiLe Team, mỗi dòng một người.
+1. Lập bản đồ kết nối, mỗi người một thẻ, xếp theo tên. Mỗi thẻ gồm: tên, nghề hay đang làm gì, 3 từ tả mình, đang tìm gì, có thể giúp ai.
+2. Dưới mỗi thẻ, gợi ý 2 người nên gặp, kèm một câu lý do dựa trên “đang tìm gì” và “có thể giúp ai”.
+3. Không thêm bất kỳ thông tin nào ngoài bảng. Viết tiếng Việt đời thường, ngắn.</pre>
+    <div class="copyrow"><button class="btn alt" data-copy="promptTxt">Copy câu lệnh</button><span class="hint" data-fb></span></div>
+  </div>
+</section>
+
+<section id="du-phong">
+  <h2>Khi có gì lệch</h2>
+  <p class="lead">Mỗi dòng là một tình huống và việc làm ngay. Đừng ai phải nghĩ lúc đó.</p>
+  <div id="fb"></div>
+  <h2 style="margin-top:44px;font-size:18px">Còn mở</h2>
+  <div class="open" id="open"></div>
+</section>
+
+<footer>Bản 17/10, 22:45. Có gì thấy khó hiểu thì nhắn Thùy, bản này sẽ sửa lại.</footer>
+</div>
+
+<script>
+const $=(s,r=document)=>r.querySelector(s);
+const el=(t,c,h)=>{const e=document.createElement(t);if(c)e.className=c;if(h!=null)e.innerHTML=h;return e};
+
+const PH={kn:'p-kn',br:'p-br',nk:'p-nk'};
+const M=[
+{id:1,n:'Chào nhau + Form A',t:'12:30–12:40',min:10,ph:'kn',tools:['Form A'],
+ why:'Vào cửa nhẹ, có chỗ ngồi, có bánh, có người chào. Đồng thời lấy dữ liệu đầu vào cho bản đồ kết nối.',
+ bring:['Thẻ tên đã đóng mộc','1 thẻ mẫu có mộc đặt ở mỗi bàn','Bánh để sẵn trên bàn','QR Form A in lớn','Nhạc nền vui'],
+ who:[['La Hân','Đưa thẻ tên, để QR Form A ngay chỗ đó'],['Thái Tâm','Đứng cạnh, giúp khách quét Form A'],['Hương hoặc Duy','Phụ giúp quét (một người), người kia quay'],['Ngân','Đón khách, 12:37 mời đảo bàn theo mộc'],['Thùy','Mở Form A từ xa']],
+ says:['“Bạn điền giúp tụi mình 1 phút để check-in nha.” (Thái Tâm hay bạn phụ nói, không nhắc AI)','Lúc 12:37, Ngân mời đảo bàn: “Bạn nhìn con mộc trên thẻ tên của mình, tìm bàn có con mộc giống vậy và ngồi xuống nha.”'],
+ steps:[['','Trước giờ: bánh để sẵn trên 3 bàn. Mỗi bàn đặt 1 thẻ mẫu có con mộc riêng. Thẻ tên của khách đã đóng mộc từ trước, mỗi thẻ thuộc một trong ba mộc, không phân biệt người mới hay cũ.'],['','Khách vào, La Hân đưa thẻ tên. QR Form A để ngay chỗ đó, khách quét và điền. Khách ngồi bàn nào cũng được.'],['','Khoảng 12:37, Ngân mời đảo bàn: ai cũng về bàn có mộc trùng với thẻ tên mình. Mỗi bàn khoảng 5 người, và người quen bị xáo trộn.'],['','Ngân đi vòng chào, hỏi han vài câu, ưu tiên ngồi cạnh người mới.']],
+ off:'Khách đến trễ vẫn nhận thẻ, điền Form A và ngồi vào bàn có mộc trùng thẻ. Form A đóng lúc 12:50. Ai điền trễ thì thêm vào bản đồ kết nối nếu kịp, không kịp thì bỏ qua.'},
+{id:2,n:'What you feel like saying',t:'12:40–12:50',min:10,ph:'kn',tools:['Chỉ nói'],
+ why:'Mở lời nhẹ ngay tại bàn. Người hướng nội có chỗ an toàn để nói trước. Đây là văn hóa của NhiLe Team, giữ nguyên.',
+ bring:['Chuông','Hũ thẻ chủ đề (mỗi bàn 1)','Bánh'],
+ who:[['Ngân','Đánh chuông, giữ lượt'],['La Hân','Nhìn bàn nào im thì báo Thái Tâm'],['Thái Tâm','Ngồi vào bàn im, nói trước 1 câu'],['Hương, Duy','Quay']],
+ says:['“Mỗi 2 phút Ngân đánh 1 tiếng chuông, đến lượt người kế bên theo chiều kim đồng hồ. Vừa ăn bánh vừa nói 1 câu: hôm nay mình đang cảm thấy thế nào.”','“Vừa ăn bánh vừa nói 1 câu thôi, không cần hay, không cần dài. Ai bí thì bốc thẻ trong hũ cho đỡ ngại nha!”'],
+ steps:[['2′','Lượt 1'],['2′','Lượt 2'],['2′','Lượt 3'],['2′','Lượt 4'],['2′','Lượt 5. Đủ 5 lượt chuông là hết mục.']],
+ off:'Bàn im lặng thì Thái Tâm ngồi vào nói trước 1 câu. Người nói quá dài thì Ngân đánh chuông sớm. Bàn có số người khác 5 thì đổi thời gian chuông cho đủ lượt.'},
+{id:3,n:'Role play thu tay',t:'12:50–13:15',min:25,ph:'kn',tools:['Giấy: thẻ networking'],
+ why:'Kết nối thật giữa người với người, kể cả người đã quen nhau, vì ít ai biết bạn mình đang tìm gì và giúp được ai. Khách cũng tự thấy thu thông tin bằng tay tốn sức tới mức nào. Chưa nhắc tới AI ở mục này.',
+ bring:['Thẻ networking (17 tờ)','Bút dư','Chuông','Phiếu số đo'],
+ who:[['Ngân','Giao nhiệm vụ, đổi vòng bằng chuông'],['La Hân','Giữ giờ, ghi giờ người đủ đầu tiên, ghép người lẻ'],['Thái Tâm','Dẫn người đứng một mình vào cặp gần nhất'],['Thùy','12:50 đóng Form A, chạy AI từ xa']],
+ says:['“Mỗi bạn nhận một nhiệm vụ: trong khoảng 15 phút, thu đủ thông tin mọi người trong phòng theo thẻ này. Ai đủ trước thì giơ tay.”','“Đây là Linh, lúc nãy Linh kể với mình…” (Ngân mẫu cách giới thiệu ở vòng 2, không ai tự giới thiệu)','“Ai đủ 14 người? Đủ 10? Đủ 5?”'],
+ steps:[['3′','Giao nhiệm vụ. Không nói trước là gần như không ai kịp.'],['8′','Vòng 1, cặp. Ghép cặp ngay trong bàn, ưu tiên người mình ít nói chuyện nhất. 15 là số lẻ nên có 1 nhóm 3. Hỏi đủ 5 cột và ghi vào thẻ.'],['8′','Vòng 2, nhóm 4. Hai cặp ghép lại, ưu tiên cặp ở bàn khác. Mỗi người giới thiệu bạn ở vòng 1 cho người mới gặp. Ghi thêm vào thẻ.'],['6′','Đếm kết quả. La Hân ghi: giờ người đủ đầu tiên, và số người trung bình cả phòng. Ghi vào phiếu số đo.']],
+ off:'Người đứng một mình thì dẫn vào cặp gần nhất. Phòng ồn thì dùng chuông đổi vòng, không hô to. Khách than “nhiều quá” thì nói: “Cứ làm được bao nhiêu hay bấy nhiêu.”'},
+{id:4,n:'AI là cái cầu',t:'13:15–13:30',min:15,ph:'br',tools:['Bản đồ kết nối AI','Giấy: thẻ tò mò'],
+ why:'Khách tự thấy AI nhìn cả phòng cùng lúc và ghép được những người mình chưa nghĩ tới, còn thu bằng tay chỉ cho vài người. Bản đồ kết nối này là thật, dùng được sau buổi. Rồi chuyển từ “AI cho mình biết gì” sang “mình muốn hỏi người ấy điều gì”. Không PR, không nhắc tên lớp.',
+ bring:['QR bản đồ kết nối in lớn','Thẻ tò mò (16)','Tờ bản đồ kết nối mẫu in sẵn (dự phòng)','Phiếu số đo đã điền'],
+ who:[['Thùy','Đã báo XANH hoặc ĐỎ lúc 13:10, kèm số phút AI mất'],['La Hân','Đưa Ngân tờ XANH/ĐỎ và số phút. Phát thẻ tò mò'],['Ngân','Dẫn cả mục']],
+ says:['Câu 1, hỏi trước khi quét QR: “Trong những người bạn vừa gặp, ai là người bạn nên gặp lại? Nghĩ trong đầu thôi, chưa cần nói.”','“Lúc nãy các bạn điền cho tụi mình một cái form 1 phút. Trong lúc các bạn đi gặp nhau, có người đã nhờ AI làm cùng việc các bạn vừa làm tay. Mở điện thoại, quét QR này rồi gõ tên của bạn vào ô tìm kiếm.”','Câu 2, hỏi sau khi khách xem bản đồ kết nối: “Có ai AI gợi ý mà bạn chưa gặp, hoặc chưa nghĩ tới không?” (mời 2 đến 3 người nói)','Một câu số đo thật, nói ngắn: “Người nhanh nhất mất [phiếu: số 1] phút. Cả phòng trung bình được [số 2] người. AI làm cả phòng mất [số 3] phút.”','Khi phát thẻ tò mò: “Chỉ cần một câu hỏi thôi. Hỏi điều bạn tò mò thật, ai cũng viết được một câu.”','Khi phát thẻ tò mò, nói 3 ý ngắn: “Bản đồ cho bạn một cái tên và một lý do để gặp. Còn câu bạn tò mò thì chỉ bạn có, bạn viết vào thẻ này. Giờ nghỉ, bạn gấp thẻ lại, đưa tận tay người đó và hỏi luôn.” (rồi dừng, không giải thích thêm)'],
+ steps:[['1′','Ngân hỏi câu 1: “Trong những người bạn vừa gặp, ai là người bạn nên gặp lại? Nghĩ trong đầu thôi, chưa cần nói.” Rồi giới thiệu và cho quét QR.'],['5′','Khách gõ tên mình vào ô tìm kiếm, xem thẻ của mình và 2 người nên gặp. Ai tìm thấy thẻ mình trước thì giơ tay.'],['2′','Ngân hỏi câu 2: “Có ai AI gợi ý mà bạn chưa gặp, hoặc chưa nghĩ tới không?” Mời 2 đến 3 người nói. Sau đó nói một câu số đo thật trên phiếu.'],['3′','Phát thẻ tò mò. Khách viết 1 câu hỏi cho người AI gợi ý (hoặc người mình muốn hỏi thêm). La Hân và Thái Tâm đi quanh giúp ai bí. Viết xong thì gấp đôi, giữ đến giờ nghỉ để đưa tận tay người đó. Ai không viết được thì thôi, không ép. Dòng “Nhắn mình ở” khách tự quyết có ghi hay không.'],['2′','Câu cầu, rồi dừng.'],['2′','Đệm cho link mở chậm.']],
+ off:'Link không mở được thì Ngân đọc to 3 đến 4 dòng từ tờ bản đồ kết nối mẫu, nói thật đây là bản mẫu và bản đồ kết nối thật gửi tối nay, rồi nói luôn câu cầu. Không nói số phút. Khách hỏi “AI này học ở đâu” thì: “Cuối buổi có ô tick trong form, team sẽ nhắn bạn.” Khách ngại thông tin hiện lên thì nhắc: số điện thoại và Zalo không hiện.'},
+{id:5,n:'Nghỉ, brain gym, văn nghệ',t:'13:30–13:45',min:15,ph:'br',tools:['Giấy: thẻ tò mò'],
+ why:'Nạp lại năng lượng, đổi nhịp từ tìm hiểu người khác sang lắng lại. Đây là lúc Ngân nghỉ, và là lúc khách cầm thẻ tò mò đến gặp người mình chọn.',
+ bring:['Nước','Nhạc sôi động','Video hoặc nhạc brain gym'],
+ who:[['Ngân','Nghỉ thật 5 phút đầu'],['Thái Tâm','Dẫn brain gym và văn nghệ'],['La Hân','Nhìn ai chưa viết thẻ tò mò, nhắc nhẹ, không ép'],['Hương, Duy','Quay']],
+ says:['“Cảm ơn mọi người đã cháy hết mình! Giờ mình ngồi xuống, đi chậm lại một chút nha.” (Ngân nối sang mục 6)'],
+ steps:[['5′','Nghỉ thật. Nước, vệ sinh. Khách cầm thẻ tò mò đến gặp người mình chọn, đưa thẻ và hỏi luôn. Nhạc sôi động.'],['5′','Brain gym với Thái Tâm. Nhạc gợi ý: Wake Me Up (Avicii), I Gotta Feeling (Black Eyed Peas), Anh Không Đòi Quà (Only C, Karik).'],['5′','Văn nghệ, Thái Tâm phụ trách.']],
+ off:'Trễ giờ thì cắt văn nghệ trước, giữ phần nghỉ thật. La Hân hỏi nhẹ ai chưa viết thẻ tò mò: “Bạn tò mò muốn hỏi người AI gợi ý điều gì?” Vẫn không viết thì thôi.'},
+{id:6,n:'Nối kết rút gọn',t:'13:45–14:25',min:40,ph:'nk',tools:['Giấy: bao lì xì, thư'],
+ why:'Từ kết nối với người khác quay vào kết nối với chính mình. Đây là phần chạm sâu nhất của buổi.',
+ bring:['16 bao lì xì','Giấy viết thư, phong bì','Bút dư','Khăn giấy','Nhạc không lời'],
+ who:[['Ngân','Dẫn cả mục'],['La Hân','Phát giấy, phong bì, khăn giấy'],['Hương, Duy','Dừng quay mặt khách ở mục này (đề xuất)'],['Thái Tâm','Ngồi cùng nhóm lẻ (3 người) nếu cần']],
+ says:['“Hôm nay mình đã hỏi rất nhiều về người khác. Giờ mình hỏi về chính mình.” (rồi dừng)','Câu chuyện lớp 9 của Ngân (khoảng 3 phút, Ngân tự viết)'],
+ steps:[['2′','Mở. Bật nhạc không lời, chờ mọi người ngồi.'],['15′','Bao lì xì cho chính mình. Nhóm 4 (4, 4, 4, 3), ngồi vòng tròn. Mỗi người bốc 1 bao, chưa mở, trao cho người bên trái. Lần lượt mở, đọc câu hỏi và chia sẻ cảm xúc khi nhận. Không phán xét, không khuyên.'],['3′','Câu chuyện của Ngân, mở màn cho phần viết thư.'],['17′','Viết thư cho mình 1 năm sau. Ai không thích viết thì vẽ.'],['3′','Niêm phong. Ghi tên và đích đến hiện tại ngoài phong bì, dán lại. Khách mang thư về.']],
+ off:'Ai không muốn mở bao hay nói thì được quyền nghe thôi, không ai hỏi lại. Có người xúc động thì không vây quanh: đưa khăn giấy và hỏi “Bạn muốn ngồi tiếp hay nghỉ một chút?” Không ai đọc nội dung bao hay thư của khách. Trễ giờ thì rút viết thư xuống 12 phút, không cắt bao lì xì.'},
+{id:7,n:'Khép buổi',t:'14:25–14:35',min:10,ph:'nk',tools:['Form B'],
+ why:'Khép ấm. Khách ghi lại điều mang về và bước tiếp họ muốn chọn. Đây là chỗ gieo hạt, không ép.',
+ bring:['QR Form B in lớn','Nhạc vui'],
+ who:[['Ngân','Mời quét Form B'],['La Hân','Đi từng bàn giúp ai chưa quét được'],['Hương hoặc Duy','Chụp ảnh chung'],['Thùy','Form B đã mở sẵn, theo dõi số người điền']],
+ says:['“Cuối cùng, mỗi bạn quét QR này, ghi một điều bạn mang về hôm nay, và chọn bước tiếp nếu bạn muốn.”'],
+ steps:[['5′','Quét Form B.'],['5′','Chụp ảnh chung cả phòng, một tấm, nhạc vui.']],
+ off:'Ngân không nói thêm gì về lớp hay cộng đồng ở đây. Đến 14:30 mà còn người chưa xong thì La Hân nhắc tại chỗ, ảnh vẫn chụp. Ai cần về sớm thì quét QR trên đường ra, form vẫn mở.'}
+];
+
+const LANES=[
+['Ngân (host)','Đón khách, mời đảo bàn theo mộc','Đánh chuông, giữ lượt','Giao nhiệm vụ, đổi vòng, đếm “ai đủ?”','Dẫn quét QR, đọc số đo, câu cầu','Nghỉ','Dẫn bao lì xì, kể chuyện, thư','Mời quét Form B'],
+['La Hân','Đưa thẻ tên, để QR Form A','Nhìn bàn nào im','Giữ giờ, ghi giờ người đủ đầu tiên','Nhận tin XANH/ĐỎ, phát thẻ tò mò','Nhắc ai chưa viết thẻ tò mò','Phát giấy, phong bì','Giúp ai chưa quét'],
+['Thái Tâm','Giúp khách quét Form A','Ngồi bàn im nói trước','Dẫn người lẻ vào cặp','','Dẫn brain gym, văn nghệ','Ngồi nhóm lẻ nếu cần',''],
+['Hương, Duy','Một người phụ giúp quét','Quay','Quay','Quay','Quay','Dừng quay mặt khách','Chụp ảnh chung'],
+['Thùy (từ xa)','Mở Form A','Xem số người điền','12:50 đóng Form A, chạy AI','13:10 nhắn XANH/ĐỎ + số phút','','','Form B đã mở, theo dõi']
+];
+const ROSTER=[
+['Tuyết Ngân','Host, MC','Dẫn cả buổi theo 7 mục. Nghỉ thật ở mục 5.'],
+['Chị La Hân','Hậu cần','Giấy tờ, đồ dùng. Đầu buổi đưa thẻ tên và để QR Form A. Giữ giờ và ghi số đo. Cầm điện thoại nhận tin của Thùy.'],
+['Thái Tâm','Check-in, brain gym, văn nghệ','Đầu buổi giúp khách quét Form A. Từ mục 5 dẫn brain gym và văn nghệ.'],
+['Hương và Duy','Quay phim','Một trong hai phụ giúp khách quét Form A đầu buổi. Một người chụp ảnh chung ở mục 7.'],
+['Thùy (Tyna)','IT phía sau, ở nhà','Form A, Form B, bản đồ kết nối AI. Không điều hành buổi. Thao tác AI thay cả đội vì ở phòng không có máy.']
+];
+const RULES=[
+['Không nhắc tên lớp','Không nói “lớp AI” hay “Là Chính Mình” trên sân khấu. Lớp chỉ xuất hiện như một ô tick trong Form B.'],
+['Không giải thích','Không giải thích “tư duy AI” hay “dọn rác”. Chỉ hỏi để khách tự thấy.'],
+['Không nói AI thay được người','Câu chuẩn: AI làm nhanh phần thu thông tin, còn điều mình tò mò muốn hỏi một con người là của mình.'],
+['Không nói số chưa đo','Không nói “3 phút” nếu chưa có số đo thật của hôm đó.'],
+['Không ép chia sẻ','Không khuyên, không phán xét, không ai đọc nội dung bao lì xì hay thư của khách.'],
+['Không hứa về lớp hay giá','Khách hỏi thì: “Cuối buổi có ô tick trong form, team sẽ nhắn bạn.”']
+];
+const FB=[
+['Wifi yếu ở phòng','Bản đồ kết nối là một trang nhẹ, mở được bằng 4G. La Hân và một bạn mở hotspot. Khách mở trước rồi để màn hình, không tải lại.'],
+['13:10 chưa có tin của Thùy, tin ĐỎ, hoặc trang bản đồ kết nối chưa dựng kịp','13:12 mà chưa có tin XANH thì coi là ĐỎ. Dùng tờ bản đồ kết nối mẫu in sẵn. Ngân nói thật đây là bản mẫu và bản đồ kết nối thật gửi tối nay. Không nói số phút. Vẫn làm thẻ tò mò (khách tự chọn người) và câu cầu.'],
+['Link bản đồ kết nối không mở trên điện thoại khách','Ngân đọc to 3 đến 4 dòng từ bản đồ kết nối (hoặc tờ mẫu), rồi nói câu cầu. Bản đồ kết nối gửi vào nhóm của buổi ngay khi chạy được.'],
+['Khách không tick đồng ý hiện thông tin','Không vào bản đồ kết nối. Vẫn ở lại và dùng thẻ giấy như mọi người.'],
+['Khách ít hơn hoặc nhiều hơn 15','Sửa số “14 người” trong nhiệm vụ thành số người thật trừ 1. Dưới 10 khách: bỏ vòng 2 nhóm 4, làm hai vòng cặp (đổi cặp). Nhiều hơn 15: lấy thêm thẻ và bao từ phần dư, nhóm bao lì xì tối đa 5 người.'],
+['Khách đến trễ','Trước 12:50 vào bình thường. Sau 12:50: nhận thẻ tên, tìm bàn có mộc trùng, điền Form A, nhận thẻ tò mò ở mục 4 hoặc 5, hòa vào từ mục 6. Thùy thêm tên vào bản đồ kết nối sau buổi.'],
+['Trễ giờ','Cắt theo thứ tự: (1) văn nghệ, (2) brain gym còn 3 phút, (3) viết thư còn 12 phút, (4) đếm kết quả ở mục 3. Không cắt: bao lì xì, Form B.'],
+['Vắng một vai','Thái Tâm vắng: bật video brain gym, văn nghệ thay bằng 1 bài hát cả phòng nghe. Hương hoặc Duy vắng: người còn lại chụp. Ngân khàn tiếng: La Hân cầm chuông, Thái Tâm đọc các câu mở mục.'],
+['Khách xúc động ở mục 6','Không vây quanh. Đưa khăn giấy, hỏi: “Bạn muốn ngồi tiếp hay nghỉ một chút?” Ai muốn ra ngoài thì để ra.'],
+['Khách hỏi về lớp, giá','“Cuối buổi có ô tick trong form, team sẽ nhắn bạn.” Không nói thêm.']
+];
+const OPEN=[
+['8 câu bao lì xì','Ngân gửi La Hân file câu hỏi từ bản 10/10 để in.'],
+['Câu chuyện lớp 9','Ngân viết và tập nói, khoảng 3 phút.'],
+['Trang bản đồ kết nối','Thùy dựng cùng Claude ngày mai trước buổi (Vercel). Có link thì gửi QR cho La Hân in. Chưa rõ giờ in.'],
+['Nhóm chat của buổi','Chưa rõ nền tảng. Cần một nhóm để Thùy nhắn XANH/ĐỎ cho La Hân.'],
+['Nhắn khách sau buổi','Chưa rõ ai nhắn. Hạn nhắn: 20/10.'],
+['Quay phim mục 6','Đề xuất dừng quay mặt khách ở bao lì xì và viết thư. Thùy chốt.']
+];
+
+/* strip */
+const strip=$('#strip');
+M.forEach((m,i)=>{const b=el('button','seg '+PH[m.ph],`<span class="t">${m.t.split('–')[0]}</span><span class="n">${i+1}<span class="nn">. ${m.n}</span></span>`);b.title=m.n;b.style.setProperty('--w',m.min);b.addEventListener('click',()=>{pick(i);$('#lo-trinh').scrollIntoView()});b.dataset.i=i;strip.appendChild(b)});
+
+/* roster */
+const ro=$('#roster');ROSTER.forEach(r=>{const d=el('div','person'+(r[0].startsWith('Thùy')?' remote':''),`<b>${r[0]}</b><div class="role">${r[1]}</div><p>${r[2]}</p>`);ro.appendChild(d)});
+
+/* lane */
+const lane=$('#lane');
+lane.innerHTML='<thead><tr><th></th>'+M.map(m=>`<th class="${PH[m.ph]}"><span class="mono">${m.t.split('–')[0]}</span><br>${m.id}. ${m.n}</th>`).join('')+'</tr></thead><tbody>'+LANES.map(r=>`<tr><th>${r[0]}</th>${r.slice(1).map(c=>`<td class="${c?'':'e'}">${c||'—'}</td>`).join('')}</tr>`).join('')+'</tbody>';
+
+/* rules */
+$('#rules').innerHTML='<div class="eyebrow" style="margin-top:14px">Sáu điều không làm, không nói</div>'+RULES.map(r=>`<div><b>${r[0]}.</b><span>${r[1]}</span></div>`).join('');
+
+/* tabs + panel */
+let cur=0,tmr=null,left=0,speed=1;
+const tabs=$('#tabs'),panel=$('#panel');
+M.forEach((m,i)=>{const b=el('button','tab '+PH[m.ph],`${m.id}. ${m.n}`);b.setAttribute('role','tab');b.addEventListener('click',()=>pick(i));tabs.appendChild(b)});
+const hl=t=>t.replace(/“[^”]+”/g,m=>`<mark class="ngan">${m}</mark>`);
+function fmt(s){s=Math.max(0,Math.round(s));return String(Math.floor(s/60)).padStart(2,'0')+':'+String(s%60).padStart(2,'0')}
+function stopT(){if(tmr){clearInterval(tmr);tmr=null}}
+function pick(i){
+  stopT();cur=i;const m=M[i];left=m.min*60;
+  [...tabs.children].forEach((b,k)=>b.setAttribute('aria-selected',k===i));
+  [...strip.children].forEach((b,k)=>b.classList.toggle('on',k===i));
+  panel.className='panel '+PH[m.ph];
+  panel.innerHTML=`
+   <div class="head"><h3>Mục ${m.id}. ${m.n}</h3><span class="mono">${m.t}</span><span class="pill">${m.ph==='kn'?'Kết nối':m.ph==='br'?'Cầu':'Nối kết'} · ${m.min} phút</span></div>
+   <p class="lead" style="margin-top:8px">${m.why}</p>
+   <div class="chips">${m.tools.map(t=>`<span class="chip tool">${t}</span>`).join('')}${m.bring.map(b=>`<span class="chip">${b}</span>`).join('')}</div>
+   <div class="cols">
+     <div><div class="lbl">Các bước</div><ul class="steps">${m.steps.map((s,k)=>`<li><input type="checkbox" id="s${i}_${k}" aria-label="Xong bước ${k+1}"><span class="m">${s[0]||(k+1)}</span><span class="tx">${hl(s[1])}</span></li>`).join('')}</ul></div>
+     <div>
+       <div class="lbl">Ngân nói</div><div class="says">${m.says.map(s=>`<div class="say">${s}</div>`).join('')}</div>
+       <div class="lbl" style="margin-top:16px">Ai làm</div><div class="who">${m.who.map(w=>`<div><b>${w[0]}</b><span>${w[1]}</span></div>`).join('')}</div>
+     </div>
+   </div>
+   <div class="off"><b>Lệch thì làm gì</b>${m.off}</div>
+   <div class="timer"><div class="clock" id="clock">${fmt(left)}</div><button class="btn" id="go">Chạy thử</button><button class="btn alt" id="rs">Đặt lại</button>
+     <label>Tốc độ <select id="sp"><option value="1">Thật (×1)</option><option value="10">×10</option><option value="30">×30</option><option value="60">×60</option></select></label><span class="hint">Còn 2 phút đồng hồ chuyển đỏ</span></div>`;
+  panel.querySelectorAll('.steps input').forEach(c=>c.addEventListener('change',()=>c.closest('li').classList.toggle('done',c.checked)));
+  const clock=$('#clock'),go=$('#go'),sp=$('#sp');sp.value=String(speed);
+  sp.addEventListener('change',()=>{speed=+sp.value});
+  const draw=()=>{clock.textContent=fmt(left);clock.classList.toggle('warn',left<=120&&left>0)};
+  go.addEventListener('click',()=>{if(tmr){stopT();go.textContent='Tiếp tục';return}
+    go.textContent='Dừng';tmr=setInterval(()=>{left-=speed;if(left<=0){left=0;stopT();go.textContent='Hết giờ'}draw()},1000)});
+  $('#rs').addEventListener('click',()=>{stopT();left=m.min*60;go.textContent='Chạy thử';draw()});
+}
+$('#prev').addEventListener('click',()=>pick(Math.max(0,cur-1)));
+$('#next').addEventListener('click',()=>pick(Math.min(M.length-1,cur+1)));
+pick(0);
+
+/* net table */
+$('#netTable').innerHTML='<thead><tr><th>#</th><th>Tên</th><th>Nghề, hoặc đang làm gì</th><th>Đang tìm gì</th><th>3 từ tả họ</th><th>Có thể giúp ai</th></tr></thead><tbody>'+Array.from({length:14},(_,i)=>`<tr><td class="n">${i+1}</td><td></td><td></td><td></td><td></td><td></td></tr>`).join('')+'</tbody>';
+
+/* calc */
+function calc(){const a=$('#c1').value||'___',b=$('#c2').value||'___',c=$('#c3').value||'___';
+  $('#calcOut').innerHTML=`<b>Ngân nói (câu phụ, sau câu hỏi):</b> “Người nhanh nhất mất ${a} phút. Cả phòng trung bình được ${b} người trong 15 phút. AI làm cả phòng mất ${c} phút.”`}
+['c1','c2','c3'].forEach(id=>$('#'+id).addEventListener('input',calc));calc();
+
+/* forms */
+const ytxt=(id,label,tag,ph)=>`<div class="q"><label for="${id}">${label}</label>${tag?`<div class="tag">${tag}</div>`:''}<input type="text" id="${id}" placeholder="${ph||''}"></div>`;
+const VIS='<span class="vis">Hiện trong bản đồ kết nối</span>',HID='<span class="hid">Chỉ team thấy</span>';
+$('#aBody').innerHTML=
+ ytxt('a1','Tên bạn',VIS,'Ví dụ: Lan Chi')+
+ ytxt('a2','Số điện thoại hoặc Zalo',HID+'<span>Dùng để nối với form cuối buổi</span>','')+
+ ytxt('a3','Nghề, hoặc bạn đang làm gì',VIS,'')+
+ `<div class="q"><label for="a4">Bạn đang tìm gì?</label><div class="tag">${VIS}</div><textarea id="a4"></textarea></div>`+
+ ytxt('a5','3 từ tả bạn',VIS+'<span>Bạn tự khai, AI không đoán</span>','')+
+ `<div class="q"><label for="a6">Bạn có thể giúp ai, giúp gì?</label><div class="tag">${VIS}</div><textarea id="a6"></textarea></div>`+
+ `<div class="q"><div class="ql">Bạn đã học Là Chính Mình chưa?</div><div class="tag">${HID}<span>Để team gợi ý đúng bước tiếp</span></div><label class="opt"><input type="radio" name="a7"> Rồi</label><label class="opt"><input type="radio" name="a7"> Chưa</label></div>`+
+ `<label class="opt"><input type="checkbox" id="a8"><span>Thông tin trên, trừ số điện thoại hay Zalo, sẽ hiện cho 15 người trong buổi này xem, và team giữ để giúp mọi người kết nối sau buổi. <b>(bắt buộc)</b></span></label>`+
+ `<button class="send" id="aSend">Gửi</button><div class="copyrow" style="margin-top:0"><button class="btn alt" data-copytxt="A">Copy bộ câu hỏi</button><span class="hint" data-fb></span></div>`;
+$('#aSend').addEventListener('click',()=>{if(!$('#a8').checked){$('#a8').focus();$('#a8').closest('label').style.outline='2px solid var(--bad)';return}
+ $('#aBody').innerHTML='<div class="thanks"><b>Cảm ơn bạn!</b><br>Đây là bản thử, chưa gửi đi đâu.</div>'});
+
+$('#bBody').innerHTML=
+ ytxt('b1','Số điện thoại hoặc Zalo (cùng số ở form đầu buổi)','','')+
+ `<div class="q"><label for="b2">Một điều bạn mang về hôm nay</label><textarea id="b2"></textarea></div>`+
+ `<div class="q"><div class="ql">Buổi hôm nay, bạn chấm mấy điểm?</div><div style="display:flex;gap:6px;flex-wrap:wrap">${[1,2,3,4,5].map(n=>`<label class="opt" style="border:1px solid var(--line);border-radius:6px;padding:6px 12px"><input type="radio" name="b3"> ${n}</label>`).join('')}</div></div>`+
+ `<div class="q"><label for="b4">Điều gì chưa ổn (không bắt buộc)</label><textarea id="b4"></textarea></div>`+
+ `<div class="q"><div class="ql">Bạn đã học Là Chính Mình chưa?</div><label class="opt"><input type="radio" name="b5" value="r"> Rồi</label><label class="opt"><input type="radio" name="b5" value="c"> Chưa</label></div>`+
+ `<div class="branch" id="brR" hidden><div class="ql" style="font-weight:600;font-size:13.5px">Bước tiếp bạn muốn (chọn được nhiều)</div><label class="opt"><input type="checkbox"> Nhận giới thiệu người trong bản đồ kết nối</label><label class="opt"><input type="checkbox"> Nghe về lớp AI</label><label class="opt"><input type="checkbox"> Chưa cần lúc này</label></div>`+
+ `<div class="branch" id="brC" hidden><div class="ql" style="font-weight:600;font-size:13.5px">Bước tiếp bạn muốn (chọn được nhiều)</div><label class="opt"><input type="checkbox"> Vào cộng đồng NhiLe Team</label><label class="opt"><input type="checkbox"> Nghe về lớp Là Chính Mình tháng 12 ở Đà Nẵng</label><label class="opt"><input type="checkbox"> Chưa cần lúc này</label></div>`+
+ `<button class="send" id="bSend">Gửi</button><div class="copyrow" style="margin-top:0"><button class="btn alt" data-copytxt="B">Copy bộ câu hỏi</button><span class="hint" data-fb></span></div>`+
+ `<p class="hint">Hai nhánh “bước tiếp” là Google Form rẽ nhánh theo câu “đã học chưa”. Bấm thử Rồi hoặc Chưa ở trên.</p>`;
+document.querySelectorAll('input[name=b5]').forEach(r=>r.addEventListener('change',()=>{$('#brR').hidden=r.value!=='r';$('#brC').hidden=r.value!=='c'}));
+$('#bSend').addEventListener('click',()=>{$('#bBody').innerHTML='<div class="thanks"><b>Cảm ơn bạn!</b><br>Đây là bản thử, chưa gửi đi đâu.</div>'});
+
+const TXT={
+A:`FORM A · Check-in (đóng 12:50)
+1. Tên bạn [ngắn, bắt buộc] · hiện trong bản đồ kết nối
+2. Số điện thoại hoặc Zalo [ngắn, bắt buộc] · chỉ team thấy
+3. Nghề, hoặc bạn đang làm gì [ngắn] · hiện
+4. Bạn đang tìm gì? [đoạn] · hiện
+5. 3 từ tả bạn [ngắn] · hiện
+6. Bạn có thể giúp ai, giúp gì? [đoạn] · hiện
+7. Bạn đã học Là Chính Mình chưa? [Rồi / Chưa] · chỉ team thấy
+8. [Ô tick, bắt buộc] Thông tin trên, trừ số điện thoại hay Zalo, sẽ hiện cho 15 người trong buổi này xem, và team giữ để giúp mọi người kết nối sau buổi.`,
+B:`FORM B · Cuối buổi
+1. Số điện thoại hoặc Zalo [ngắn, bắt buộc, cùng số với Form A]
+2. Một điều bạn mang về hôm nay [ngắn]
+3. Buổi hôm nay, bạn chấm mấy điểm? [thang 1 đến 5]
+4. Điều gì chưa ổn [đoạn, không bắt buộc]
+5. Bạn đã học Là Chính Mình chưa? [Rồi / Chưa] → rẽ nhánh
+   Nếu Rồi, bước tiếp bạn muốn [chọn nhiều]: Nhận giới thiệu người trong bản đồ kết nối / Nghe về lớp AI / Chưa cần lúc này
+   Nếu Chưa, bước tiếp bạn muốn [chọn nhiều]: Vào cộng đồng NhiLe Team / Nghe về lớp Là Chính Mình tháng 12 ở Đà Nẵng / Chưa cần lúc này`};
+function copyText(t,fb){
+  const done=()=>{fb.textContent='Đã copy'};
+  const old=()=>{const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){fb.textContent='Chưa copy được, chọn và copy tay'}ta.remove()};
+  try{navigator.clipboard.writeText(t).then(done,old)}catch(e){old()}
+}
+document.addEventListener('click',e=>{
+  const b=e.target.closest('[data-copy],[data-copytxt]');if(!b)return;
+  const fb=b.parentElement.querySelector('[data-fb]');
+  const t=b.dataset.copy?document.getElementById(b.dataset.copy).textContent:TXT[b.dataset.copytxt];
+  copyText(t,fb);
+});
+
+
+/* danh ba mo phong */
+const DIR=[
+{n:'Lan Chi',j:'thiết kế nội thất',w:'tỉ mỉ, ấm, hay cười',s:'người làm ảnh sản phẩm',h:'tư vấn bố trí không gian nhỏ',m:[['Quốc Bảo','anh chụp ảnh sản phẩm'],['Thu Hà','chị cần người sắp xếp không gian']]},
+{n:'Quốc Bảo',j:'nhiếp ảnh',w:'chậm, kỹ, thẳng',s:'khách làm đồ handmade',h:'chụp ảnh sản phẩm',m:[['Thu Hà','chị làm đồ handmade'],['Lan Chi','chị cần ảnh cho dự án nội thất']]},
+{n:'Thu Hà',j:'làm đồ handmade',w:'nhẹ, tinh, kiên nhẫn',s:'người sắp xếp quầy hàng',h:'dạy làm nến thơm',m:[['Lan Chi','chị bố trí không gian'],['Quốc Bảo','anh chụp sản phẩm']]}
+];
+const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');
+$('#dBody').innerHTML='<div class="q"><label for="dq">Gõ tên của bạn</label><input type="text" id="dq" placeholder="Ví dụ: lan"></div><div id="dOut"></div><p class="hint">Mỗi người một thẻ, không có số điện thoại hay Zalo. Mở bằng QR, không cần đăng nhập. Ba người trong ví dụ là tên giả. Thử gõ: lan, bao, ha.</p>';
+function dRender(){const q=norm($('#dq').value.trim());const out=$('#dOut');
+  if(!q){out.innerHTML='<div class="hint">Chưa gõ gì. Gõ vài chữ của tên bạn.</div>';return}
+  const r=DIR.filter(d=>norm(d.n).includes(q));
+  out.innerHTML=r.length?r.map(d=>`<div class="dir"><div class="nm">${d.n}</div><div>Nghề: ${d.j}</div><div>3 từ: ${d.w}</div><div>Đang tìm: ${d.s}</div><div>Có thể giúp: ${d.h}</div><div class="meet"><b>Nên gặp:</b> ${d.m.map(x=>x[0]+', vì '+x[1]).join('. ')}.</div></div>`).join(''):'<div class="hint">Không thấy tên này. Thử gõ ít chữ hơn, hoặc nhờ bạn hậu cần.</div>';}
+$('#dq').addEventListener('input',dRender);$('#dq').value='lan';dRender();
+
+/* fallback + open */
+$('#fb').innerHTML=FB.map(f=>`<details class="fb"><summary>${f[0]}</summary><div>${f[1]}</div></details>`).join('');
+$('#open').innerHTML=OPEN.map(o=>`<div><b>${o[0]}</b><span>${o[1]}</span></div>`).join('');
+
+/* nav highlight */
+const links=[...document.querySelectorAll('nav a')];
+const secs=links.map(a=>document.querySelector(a.getAttribute('href')));
+const io=new IntersectionObserver(es=>{es.forEach(e=>{if(e.isIntersecting){links.forEach(l=>l.classList.toggle('on',l.getAttribute('href')==='#'+e.target.id))}})},{rootMargin:'-30% 0px -60% 0px'});
+secs.forEach(s=>s&&io.observe(s));
+</script>
