@@ -77,7 +77,7 @@ textarea{min-height:120px;resize:vertical}
    API: địa chỉ Apps Script (Thùy dán sau khi triển khai, xem khach/apps-script.gs).
    Để trống thì trang chạy chế độ demo, không gửi gì đi.
    Logo: file logo.png là logo NhiLe TEAM chính thức (bản nền đen, Tyna gửi 17/10), chỉ dùng ở trang chính, rộng 150px (luật brand: tối thiểu 110px). */
-const API='';
+const API='https://script.google.com/macros/s/AKfycbwOK81nfGoIwb6rf0kqcv2tN3ntj7sfH5W_M5E9e5Fqt3qs_HB5ekCc_l780uTX1Ka3jg/exec';
 const $=s=>document.querySelector(s),app=$('#app');
 const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').trim();
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
