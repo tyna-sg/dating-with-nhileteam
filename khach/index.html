@@ -20,7 +20,13 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16p
 .wm{display:flex;align-items:baseline;gap:8px}
 .wm b{font-family:var(--head);font-weight:400;font-size:26px;letter-spacing:.02em;text-transform:lowercase;color:var(--ink)}
 .wm span{font-size:13px;color:var(--muted);letter-spacing:.02em}
-.hero{display:block;width:150px;height:auto;margin:6px 0 26px}
+.brand{display:flex;justify-content:space-between;align-items:center;gap:16px;margin:4px 0 28px}
+.brand .wm{flex-direction:column;align-items:flex-start;gap:4px}
+.brand .wm b{font-size:52px;line-height:.9}
+.brand .wm span{font-size:15px;color:var(--ink);opacity:.85}
+.brand img{display:block;width:112px;height:auto;flex:none}
+.pin{width:100%;font:inherit;font-family:var(--head);font-size:40px;letter-spacing:.4em;text-align:center;color:var(--ink);background:#000;border:1.5px solid var(--line);border-radius:12px;padding:12px 0 12px .4em;outline:none;caret-color:var(--y)}
+.pin:focus{border-color:var(--y)}
 h1{font-family:var(--head);font-weight:400;font-size:40px;line-height:1.08;margin:0 0 10px;text-transform:uppercase;letter-spacing:.01em}
 h1 em{font-style:normal;color:var(--y)}
 h2{font-family:var(--head);font-weight:400;font-size:30px;line-height:1.12;margin:0 0 8px;text-transform:uppercase}
@@ -110,15 +116,14 @@ const DIR=[
 
 const st={a:{},i:0,list:A,key:'A',sending:false};
 const wm=()=>`<span class="wm"><b>dating</b><span>with NhiLe Team</span></span>`;
-const head=back=>`<div class="top"><span>${back?'<button class="back" onclick="home()">← Trang chính</button>':wm()}</span><span>CN 18/10</span></div>`;
+const head=back=>`<div class="top"><span>${back?'<button class="back" onclick="home()">← Trang chính</button>':wm()}</span></div>`;
 
 function home(){
- app.innerHTML=`<div class="top"><span class="wm"><b>dating</b><span>with NhiLe Team</span></span><span>CN 18/10</span></div>
- <img class="hero" src="logo.png" width="150" alt="NhiLe TEAM">
+ app.innerHTML=`<div class="brand"><span class="wm"><b>dating</b><span>with NhiLe Team</span></span><img src="logo.png" width="112" alt="NhiLe TEAM"></div>
  <h1>Chào bạn, mình <em>kết nối</em> nhé.</h1>
  <p class="sub">Buổi hôm nay có 3 chỗ bạn cần tới trang này. Lúc nào cần, bạn bấm đúng nút đó.</p>
  <button class="go" onclick="startForm('A')"><span class="ic">A</span><span><b>Điền thẻ giới thiệu</b><small>Đầu buổi · khoảng 2 phút</small></span><span class="ar">›</span></button>
- <button class="go" onclick="mapView()"><span class="ic">◎</span><span><b>Bản đồ kết nối</b><small>Sau 12:50 · tìm tên bạn, xem nên gặp ai</small></span><span class="ar">›</span></button>
+ <button class="go" onclick="mapLock()"><span class="ic">◎</span><span><b>Bản đồ kết nối</b><small>Mở khi MC đọc mật khẩu · xem nên gặp ai</small></span><span class="ar">›</span></button>
  <button class="go" onclick="startForm('B')"><span class="ic">B</span><span><b>Điền cuối buổi</b><small>Cuối buổi · khoảng 1 phút</small></span><span class="ar">›</span></button>
  <p class="hint" style="margin-top:24px">Số điện thoại hay Zalo của bạn chỉ team thấy.</p>`;
  scrollTo(0,0);
@@ -195,6 +200,24 @@ async function loadMap(){
 const card=d=>`<div class="res"><h3>${esc(d.ten)}</h3><p class="job">${esc(d.nghe)}</p>
  <div class="kv"><span>3 từ tả</span>${esc(d.ba)}</div><div class="kv"><span>Đang tìm</span>${esc(d.tim)}</div><div class="kv"><span>Có thể giúp</span>${esc(d.giup)}</div>
  ${(d.gap1||d.gap2)?`<div class="meet"><h4>Nên gặp</h4>${[[d.gap1,d.ly1],[d.gap2,d.ly2]].filter(x=>x[0]).map(x=>`<div class="who"><b>${esc(x[0])}</b>${x[1]?esc(x[1]):''}</div>`).join('')}<p class="hint" style="text-align:left;margin:10px 0 0">Giờ nghỉ, bạn tới nói chuyện với họ nhé.</p></div>`:`<div class="meet"><p class="hint" style="text-align:left;margin:0">Gợi ý “nên gặp” của bạn đang được chuẩn bị. Quay lại sau ít phút.</p></div>`}</div>`;
+/* Khoá bản đồ: Tuyết Ngân đọc mật khẩu khi bản đồ xong. Chỉ để giữ nhịp buổi, không phải bảo mật. */
+const PASS='2507';
+function mapLock(){
+ if(draftGet('mo'))return mapView();
+ app.innerHTML=head(1)+`<h2>Bản đồ kết nối</h2><p class="sub">Nhập mật khẩu MC đọc khi bản đồ sẵn sàng.</p>
+ <div class="card"><input class="pin" id="pw" type="text" inputmode="numeric" pattern="[0-9]*" maxlength="4" autocomplete="off" placeholder="····">
+ <div class="err" id="pwErr">Chưa đúng. Bạn nghe lại MC nhé.</div>
+ <div class="nav"><button class="btn" onclick="mapPass()">Mở bản đồ</button></div></div>`;
+ const pw=$('#pw');pw.focus();
+ pw.addEventListener('input',()=>{$('#pwErr').classList.remove('on');if(pw.value.length===4)mapPass()});
+ pw.addEventListener('keydown',e=>{if(e.key==='Enter')mapPass()});
+ scrollTo(0,0);
+}
+function mapPass(){
+ const pw=$('#pw');
+ if(pw.value.trim()===PASS){draftSet('mo',1);mapView()}
+ else{$('#pwErr').classList.add('on');pw.select()}
+}
 async function mapView(){
  app.innerHTML=head(1)+`<h2>Bản đồ kết nối</h2><p class="sub">Gõ tên bạn để xem thẻ của mình và 2 người nên gặp.</p>
  <div class="search"><input type="text" id="q" placeholder="Gõ tên của bạn" autocomplete="off" disabled></div><div id="out"><p class="hint">Đang tải bản đồ…</p></div>`;
