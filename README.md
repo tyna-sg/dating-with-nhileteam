@@ -3,4 +3,4 @@
 - `index.html` – trang kế hoạch buổi (mở thẳng bằng trình duyệt, không cần build)
 - `in-san/` – bộ in sẵn (thẻ networking, Thẻ tò mò, phiếu số đo): `print.html` và `Dating-18-10-in-san.pdf`
 
-Bản đang chạy: https://dating-nhile-18-10-tyna-sgs-projects.vercel.app/
+Trang khách: https://dating-with-nlt.vercel.app/
