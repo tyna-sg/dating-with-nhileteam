@@ -350,7 +350,7 @@ footer{margin-top:50px;font-size:12.5px;color:var(--muted);border-top:1px solid 
 
   <div class="item" style="margin-top:22px">
     <header><h3>Từ Form A ra bản đồ kết nối (Thùy làm từ xa)</h3><span class="meta">Chạy lúc 12:50, sau khi đóng Form A</span></header>
-    <p class="why">Ngân và các bạn ở phòng không cần chạm vào phần này. Thùy ở nhà lấy bảng Form A, bỏ cột số điện thoại và cột “đã học Là Chính Mình chưa”, dán vào AI cùng câu lệnh dưới, rồi đưa kết quả vào trang bản đồ kết nối (dựng trên Vercel). Link và QR của trang gửi cho La Hân để in.</p>
+    <p class="why">Ngân và các bạn ở phòng không cần chạm vào phần này. Thùy ở nhà lấy bảng Form A, bỏ cột số điện thoại, cột “đã học Là Chính Mình chưa” và cột “mức dùng AI”, dán vào AI cùng câu lệnh dưới, rồi đưa kết quả vào trang bản đồ kết nối (dựng trên Vercel). Link và QR của trang gửi cho La Hân để in.</p>
     <pre class="prompt" id="promptTxt">Đây là bảng thông tin 15 người trong buổi Dating with NhiLe Team, mỗi dòng một người.
 1. Lập bản đồ kết nối, mỗi người một thẻ, xếp theo tên. Mỗi thẻ gồm: tên, nghề hay đang làm gì, 3 từ tả mình, đang tìm gì, có thể giúp ai.
 2. Dưới mỗi thẻ, gợi ý 2 người nên gặp, kèm một câu lý do dựa trên “đang tìm gì” và “có thể giúp ai”.
@@ -541,6 +541,7 @@ $('#aBody').innerHTML=
  ytxt('a5','3 từ tả bạn',VIS+'<span>Bạn tự khai, AI không đoán</span>','')+
  `<div class="q"><label for="a6">Bạn có thể giúp ai, giúp gì?</label><div class="tag">${VIS}</div><textarea id="a6"></textarea></div>`+
  `<div class="q"><div class="ql">Bạn đã học Là Chính Mình chưa?</div><div class="tag">${HID}<span>Để team gợi ý đúng bước tiếp</span></div><label class="opt"><input type="radio" name="a7"> Rồi</label><label class="opt"><input type="radio" name="a7"> Chưa</label></div>`+
+ `<div class="q"><div class="ql">Hiện giờ bạn dùng AI ở mức nào?</div><div class="tag">${HID}<span>Làm mốc ban đầu, để team biết nên nói gì với bạn</span></div><label class="opt"><input type="radio" name="a9"> Chưa dùng bao giờ</label><label class="opt"><input type="radio" name="a9"> Thỉnh thoảng</label><label class="opt"><input type="radio" name="a9"> Hằng tuần</label><label class="opt"><input type="radio" name="a9"> Hằng ngày</label></div>`+
  `<label class="opt"><input type="checkbox" id="a8"><span>Thông tin trên, trừ số điện thoại hay Zalo, sẽ hiện cho 15 người trong buổi này xem, và team giữ để giúp mọi người kết nối sau buổi. <b>(bắt buộc)</b></span></label>`+
  `<button class="send" id="aSend">Gửi</button><div class="copyrow" style="margin-top:0"><button class="btn alt" data-copytxt="A">Copy bộ câu hỏi</button><span class="hint" data-fb></span></div>`;
 $('#aSend').addEventListener('click',()=>{if(!$('#a8').checked){$('#a8').focus();$('#a8').closest('label').style.outline='2px solid var(--bad)';return}
@@ -568,7 +569,8 @@ A:`FORM A · Check-in (đóng 12:50)
 5. 3 từ tả bạn [ngắn] · hiện
 6. Bạn có thể giúp ai, giúp gì? [đoạn] · hiện
 7. Bạn đã học Là Chính Mình chưa? [Rồi / Chưa] · chỉ team thấy
-8. [Ô tick, bắt buộc] Thông tin trên, trừ số điện thoại hay Zalo, sẽ hiện cho 15 người trong buổi này xem, và team giữ để giúp mọi người kết nối sau buổi.`,
+8. Hiện giờ bạn dùng AI ở mức nào? [Chưa dùng bao giờ / Thỉnh thoảng / Hằng tuần / Hằng ngày] · chỉ team thấy
+9. [Ô tick, bắt buộc] Thông tin trên, trừ số điện thoại hay Zalo, sẽ hiện cho 15 người trong buổi này xem, và team giữ để giúp mọi người kết nối sau buổi.`,
 B:`FORM B · Cuối buổi
 1. Số điện thoại hoặc Zalo [ngắn, bắt buộc, cùng số với Form A]
 2. Một điều bạn mang về hôm nay [ngắn]
