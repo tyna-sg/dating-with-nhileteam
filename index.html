@@ -218,7 +218,7 @@ footer{margin-top:50px;font-size:12.5px;color:var(--muted);border-top:1px solid 
 
 <div class="wrap">
 <nav><div class="in" id="nav">
-  <a href="#tong-quan">Tổng quan</a><a href="#ai-lam-gi">Ai làm gì</a><a href="#lo-trinh">Từng mục</a><a href="#giay">Mẫu giấy</a><a href="#form">Trang khách</a><a href="#du-phong">Dự phòng</a>
+  <a href="#tong-quan">Tổng quan</a><a href="#ai-lam-gi">Ai làm gì</a><a href="#lo-trinh">Từng mục</a><a href="#giay">Mẫu giấy</a><a href="#form">Trang khách</a><a href="#du-phong">FAQ</a>
 </div></nav>
 
 <header class="hero" id="tong-quan">
@@ -382,11 +382,9 @@ Không thêm bất kỳ thông tin nào ngoài bảng. Viết tiếng Việt đ�
 </section>
 
 <section id="du-phong">
-  <h2>Khi có gì lệch</h2>
+  <h2>FAQ</h2>
   <p class="lead">Mỗi dòng là một tình huống và việc làm ngay. Đừng ai phải nghĩ lúc đó.</p>
   <div id="fb"></div>
-  <h2 style="margin-top:44px;font-size:18px">Còn mở</h2>
-  <div class="open" id="open"></div>
 </section>
 
 <footer>Bản 17/10, 22:45. Có gì thấy khó hiểu thì nhắn Thùy, bản này sẽ sửa lại.</footer>
@@ -483,15 +481,6 @@ const FB=[
 ['Khách xúc động ở mục 6','Không vây quanh. Đưa khăn giấy, hỏi: “Bạn muốn ngồi tiếp hay nghỉ một chút?” Ai muốn ra ngoài thì để ra.'],
 ['Khách hỏi về lớp, giá','“Cuối buổi có ô tick trong form, team sẽ nhắn bạn.” Không nói thêm.']
 ];
-const OPEN=[
-['Bao lì xì','15 câu đã in trong bộ file. Ngân đọc lại một lượt, câu nào nặng quá thì báo Thùy đổi.'],
-['In bộ file','La Hân in Dating-18-10-BO-IN-La-Han.pdf theo số bản Thùy nhắn (tổng 39 tờ A4 trắng đen).'],
-['Câu chuyện lớp 9','Ngân viết và tập nói, khoảng 3 phút.'],
-['Trang khách (Form A, Bản đồ, Form B)','Xong: dating-with-nlt.vercel.app, đã nối Google Sheet, Bản đồ có khoá 2507. Sáng 18/10 Thùy quét QR in ra, điền thử trọn Form A và Form B, rồi xoá các dòng thử trong Sheet.'],
-['Nhóm chat của buổi','Chưa rõ nền tảng. Cần một nhóm để Thùy nhắn XANH/ĐỎ cho La Hân.'],
-['Nhắn khách sau buổi','Chưa rõ ai nhắn. Hạn nhắn: 20/10.'],
-['Quay phim mục 6','Đề xuất dừng quay mặt khách ở bao lì xì và viết thư. Thùy chốt.']
-];
 
 /* strip */
 const strip=$('#strip');
@@ -569,7 +558,6 @@ document.addEventListener('click',e=>{
 
 /* fallback + open */
 $('#fb').innerHTML=FB.map(f=>`<details class="fb"><summary>${f[0]}</summary><div>${f[1]}</div></details>`).join('');
-$('#open').innerHTML=OPEN.map(o=>`<div><b>${o[0]}</b><span>${o[1]}</span></div>`).join('');
 
 /* nav highlight */
 const links=[...document.querySelectorAll('nav a')];
