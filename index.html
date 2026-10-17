@@ -245,6 +245,7 @@ footer{margin-top:50px;font-size:12.5px;color:var(--muted);border-top:1px solid 
       <li><b>Bản đồ kết nối có khoá, mật khẩu 2507.</b> Ngân chỉ đọc mật khẩu khi Thùy báo XANH (bản đồ đã xong). Form A và Form B không cần mật khẩu.</li>
       <li><b>Dữ liệu đã về Google Sheet.</b> Form A, Form B ghi thẳng vào Sheet, đã thử gửi thật.</li>
       <li><b>Bao lì xì có câu hỏi mới:</b> 15 câu khác nhau + 1 thẻ dự phòng, in trắng đen. Xem ở <a href="#giay">Mẫu giấy</a>, mục 3.</li>
+      <li><b>Thẻ tò mò tăng lên 32 thẻ</b> (8 tờ), để mỗi khách viết cho 2–3 người.</li>
       <li><b>Bộ file in gộp một file:</b> <b>Dating-18-10-BO-IN-La-Han.pdf</b>. Trang 1 là hướng dẫn, in từ trang 2 là đủ số lượng.</li>
     </ul>
   </div>
@@ -286,7 +287,7 @@ footer{margin-top:50px;font-size:12.5px;color:var(--muted);border-top:1px solid 
     </div>
 
     <div class="item">
-      <header><h3>2. Thẻ tò mò</h3><span class="meta">Mục 4 phát và viết, mục 5 đem đi hỏi · in 16 tờ (15 + 1 dự phòng) · A6</span></header>
+      <header><h3>2. Thẻ tò mò</h3><span class="meta">Mục 4 phát và viết, mục 5 đem đi hỏi · 32 thẻ (8 tờ A4, mỗi tờ cắt 4) · mỗi khách viết được 2–3 thẻ</span></header>
       <p class="why">Bản đồ kết nối cho khách một cái tên và một lý do để gặp. Thẻ tò mò là bước tiếp: khách tự nghĩ một câu hỏi mình tò mò về người đó. Câu này AI không viết thay được, và khách không cần nhớ hay quen biết gì từ trước. Giờ nghỉ, khách gấp thẻ lại, đưa tận tay người đó và hỏi luôn. Người nhận giữ thẻ. Dòng “Nhắn mình ở” để người nhận nhắn lại sau buổi nếu muốn. Dòng này tự nguyện, chỉ đưa tận tay người nhận, không lên bản đồ kết nối.</p>
       <div class="row2"><div><div class="eyebrow" style="margin-bottom:6px">Mẫu trống (bản in)</div><div class="paper card">
         <h4>THẺ TÒ MÒ</h4>
@@ -433,7 +434,7 @@ const M=[
  off:'Người đứng một mình thì dẫn vào cặp gần nhất. Phòng ồn thì dùng chuông đổi vòng, không hô to. Khách than “nhiều quá” thì nói: “Cứ làm được bao nhiêu hay bấy nhiêu.”'},
 {id:4,n:'AI là cái cầu',t:'13:15–13:30',min:15,ph:'br',tools:['Bản đồ kết nối AI','Giấy: thẻ tò mò'],
  why:'Khách tự thấy AI nhìn cả phòng cùng lúc và ghép được những người mình chưa nghĩ tới, còn thu bằng tay chỉ cho vài người. Bản đồ kết nối này là thật, dùng được sau buổi. Rồi chuyển từ “AI cho mình biết gì” sang “mình muốn hỏi người ấy điều gì”. Không PR, không nhắc tên lớp.',
- bring:['QR trang khách trên bàn (cùng mã đầu buổi)','Mật khẩu Bản đồ: 2507','Thẻ tò mò (16)','Tờ bản đồ kết nối mẫu in sẵn (dự phòng)','Phiếu số đo đã điền'],
+ bring:['QR trang khách trên bàn (cùng mã đầu buổi)','Mật khẩu Bản đồ: 2507','Thẻ tò mò (32, mỗi khách 2–3 thẻ)','Tờ bản đồ kết nối mẫu in sẵn (dự phòng)','Phiếu số đo đã điền'],
  who:[['Thùy','Đã báo XANH hoặc ĐỎ lúc 13:10, kèm số phút AI mất'],['La Hân','Đưa Ngân tờ XANH/ĐỎ và số phút. Phát thẻ tò mò'],['Ngân','Dẫn cả mục. Có XANH mới đọc mật khẩu 2507']],
  says:['Câu 1, hỏi trước khi quét QR: “Trong những người bạn vừa gặp, ai là người bạn nên gặp lại? Nghĩ trong đầu thôi, chưa cần nói.”','“Lúc nãy các bạn điền cho tụi mình một cái form 1 phút. Trong lúc các bạn đi gặp nhau, có người đã nhờ AI làm cùng việc các bạn vừa làm tay. Mở trang lúc nãy (hoặc quét QR trên bàn), bấm Bản đồ kết nối, nhập mật khẩu 2507, rồi gõ tên của bạn.”','Câu 2, hỏi sau khi khách xem bản đồ kết nối: “Có ai AI gợi ý mà bạn chưa gặp, hoặc chưa nghĩ tới không?” (mời 2 đến 3 người nói)','Một câu số đo thật, nói ngắn: “Người nhanh nhất mất [phiếu: số 1] phút. Cả phòng trung bình được [số 2] người. AI làm cả phòng mất [số 3] phút.”','Khi phát thẻ tò mò: “Chỉ cần một câu hỏi thôi. Hỏi điều bạn tò mò thật, ai cũng viết được một câu.”','Khi phát thẻ tò mò, nói 3 ý ngắn: “Bản đồ cho bạn một cái tên và một lý do để gặp. Còn câu bạn tò mò thì chỉ bạn có, bạn viết vào thẻ này. Giờ nghỉ, bạn gấp thẻ lại, đưa tận tay người đó và hỏi luôn.” (rồi dừng, không giải thích thêm)'],
  steps:[['1′','Ngân hỏi câu 1: “Trong những người bạn vừa gặp, ai là người bạn nên gặp lại? Nghĩ trong đầu thôi, chưa cần nói.” Rồi giới thiệu, đọc mật khẩu 2507, mời khách bấm Bản đồ kết nối.'],['5′','Khách gõ tên mình vào ô tìm kiếm, xem thẻ của mình và 2 người nên gặp. Ai tìm thấy thẻ mình trước thì giơ tay.'],['2′','Ngân hỏi câu 2: “Có ai AI gợi ý mà bạn chưa gặp, hoặc chưa nghĩ tới không?” Mời 2 đến 3 người nói. Sau đó nói một câu số đo thật trên phiếu.'],['3′','Phát thẻ tò mò. Khách viết 1 câu hỏi cho người AI gợi ý (hoặc người mình muốn hỏi thêm). La Hân và Thái Tâm đi quanh giúp ai bí. Viết xong thì gấp đôi, giữ đến giờ nghỉ để đưa tận tay người đó. Ai không viết được thì thôi, không ép. Dòng “Nhắn mình ở” khách tự quyết có ghi hay không.'],['2′','Câu cầu, rồi dừng.'],['2′','Đệm cho link mở chậm.']],
@@ -497,7 +498,7 @@ const FB=[
 ];
 const OPEN=[
 ['Bao lì xì','Đã có 15 câu mới (thay bản 8 câu). Ngân đọc lại 11 câu Claude viết thêm, câu nào nặng quá thì báo Thùy đổi.'],
-['In bộ file','La Hân in Dating-18-10-BO-IN-La-Han.pdf từ trang 2 (25 tờ A4 trắng đen), cắt theo hướng dẫn ở trang 1. Bỏ mọi bản in QR cũ.'],
+['In bộ file','La Hân in Dating-18-10-BO-IN-La-Han.pdf từ trang 2 (29 tờ A4 trắng đen), cắt theo hướng dẫn ở trang 1. Bỏ mọi bản in QR cũ.'],
 ['Câu chuyện lớp 9','Ngân viết và tập nói, khoảng 3 phút.'],
 ['Trang khách (Form A, Bản đồ, Form B)','Xong: dating-with-nlt.vercel.app, đã nối Google Sheet, Bản đồ có khoá 2507. Sáng 18/10 Thùy quét QR in ra, điền thử trọn Form A và Form B, rồi xoá các dòng thử trong Sheet.'],
 ['Nhóm chat của buổi','Chưa rõ nền tảng. Cần một nhóm để Thùy nhắn XANH/ĐỎ cho La Hân.'],
