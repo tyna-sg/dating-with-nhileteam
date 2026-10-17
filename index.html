@@ -212,7 +212,7 @@ footer{margin-top:50px;font-size:12.5px;color:var(--muted);border-top:1px solid 
 
 <div class="wrap">
 <nav><div class="in" id="nav">
-  <a href="#tong-quan">Tổng quan</a><a href="#ai-lam-gi">Ai làm gì</a><a href="#lo-trinh">Từng mục</a><a href="#giay">Mẫu giấy</a><a href="#form">Mẫu form</a><a href="#du-phong">Dự phòng</a>
+  <a href="#tong-quan">Tổng quan</a><a href="#ai-lam-gi">Ai làm gì</a><a href="#lo-trinh">Từng mục</a><a href="#giay">Mẫu giấy</a><a href="#form">Trang khách</a><a href="#du-phong">Dự phòng</a>
 </div></nav>
 
 <header class="hero" id="tong-quan">
@@ -328,33 +328,42 @@ footer{margin-top:50px;font-size:12.5px;color:var(--muted);border-top:1px solid 
 </section>
 
 <section id="form">
-  <h2>Mẫu form</h2>
-  <p class="lead">Hai form khách điền trên điện thoại, và bản đồ kết nối là một trang web khách gõ tên mình để tìm. Bên dưới là bản thử, bấm được như thật. Thùy dựng cả ba, Ngân không phải thao tác.</p>
-  <div class="forms">
+  <h2>Trang khách</h2>
+  <p class="lead">Khách chỉ dùng một địa chỉ riêng, có 3 nút: điền Form A, tìm Bản đồ kết nối, điền Form B. Dữ liệu về thẳng Google Sheet “Dating with NhiLe Team 18/10”. Ngân không phải thao tác gì.</p>
 
-    <div class="phone p-kn" id="formA">
-      <div class="bar"><b>Dating with NhiLe Team · Check-in</b><span>Mục 1 · khách điền 1 phút · đóng lúc 12:50</span></div>
-      <div class="body" id="aBody"></div>
-    </div>
-
-    <div class="phone p-nk" id="formB">
-      <div class="bar"><b>Dating with NhiLe Team · Cuối buổi</b><span>Mục 7 · khách điền 14:25–14:35 · form mở sẵn</span></div>
-      <div class="body" id="bBody"></div>
-    </div>
-
-    <div class="phone p-br">
-      <div class="bar"><b>Bản đồ kết nối cả phòng</b><span>Mục 4 · khách quét QR, gõ tên mình · dữ liệu ví dụ</span></div>
-      <div class="body" id="dBody"></div>
+  <div class="item">
+    <header><h3>Địa chỉ và mã QR cho khách</h3><span class="meta">In 1 mã mỗi bàn, dùng cả buổi</span></header>
+    <div style="display:flex;gap:18px;align-items:center;flex-wrap:wrap;margin-top:10px">
+      <div style="background:#fff;padding:8px;border-radius:8px;line-height:0;flex:none"><svg role="img" aria-label="Mã QR trang khách" style="width:168px;height:168px;display:block" shape-rendering="crispEdges" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 31 31" class="segno"><path fill="#fff" d="M0 0h31v31h-31z"/><path class="qrline" stroke="#000" d="M1 1.5h7m1 0h1m2 0h2m2 0h2m1 0h2m2 0h7m-29 1h1m5 0h1m2 0h2m2 0h1m1 0h2m5 0h1m5 0h1m-29 1h1m1 0h3m1 0h1m2 0h8m1 0h1m1 0h1m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m2 0h4m1 0h4m1 0h2m1 0h1m1 0h3m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m1 0h1m1 0h6m1 0h1m1 0h3m1 0h1m-29 1h1m5 0h1m1 0h2m1 0h1m3 0h1m1 0h1m2 0h1m1 0h1m5 0h1m-29 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m1 0h7m-18 1h1m3 0h1m2 0h1m-18 1h7m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h2m3 0h1m-29 1h1m4 0h1m1 0h1m2 0h1m1 0h2m2 0h9m1 0h1m1 0h1m-28 1h1m3 0h2m1 0h2m1 0h1m1 0h1m1 0h1m2 0h1m1 0h3m2 0h1m-26 1h1m6 0h2m3 0h2m1 0h1m4 0h6m1 0h1m-28 1h4m1 0h2m3 0h1m4 0h1m1 0h1m3 0h1m1 0h1m2 0h3m-29 1h2m2 0h1m4 0h4m5 0h5m1 0h2m1 0h2m-29 1h2m1 0h1m1 0h3m4 0h5m1 0h1m4 0h1m-23 1h1m3 0h1m1 0h5m1 0h1m2 0h1m3 0h1m3 0h2m1 0h1m-27 1h3m1 0h3m1 0h1m1 0h1m1 0h1m1 0h1m1 0h1m5 0h1m1 0h4m-29 1h1m1 0h1m2 0h1m2 0h2m1 0h2m1 0h2m1 0h1m1 0h2m1 0h7m-29 1h1m2 0h1m2 0h3m2 0h3m1 0h3m2 0h1m1 0h1m-23 1h1m3 0h2m1 0h1m1 0h4m1 0h1m1 0h1m1 0h2m2 0h2m1 0h1m1 0h1m-28 1h1m3 0h1m1 0h1m3 0h5m2 0h1m2 0h5m1 0h2m-20 1h1m2 0h2m1 0h1m1 0h1m1 0h1m1 0h1m3 0h2m1 0h2m-29 1h7m1 0h3m1 0h1m2 0h2m1 0h3m1 0h1m1 0h1m-25 1h1m5 0h1m1 0h1m1 0h2m1 0h4m1 0h3m3 0h2m1 0h2m-29 1h1m1 0h3m1 0h1m1 0h2m1 0h1m1 0h2m2 0h1m2 0h7m1 0h1m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h2m7 0h3m1 0h1m1 0h1m1 0h2m-29 1h1m1 0h3m1 0h1m1 0h1m1 0h1m1 0h2m1 0h1m1 0h1m1 0h7m1 0h1m-28 1h1m5 0h1m1 0h2m1 0h2m2 0h1m4 0h2m2 0h1m2 0h1m-28 1h7m4 0h1m3 0h1m1 0h3m1 0h2m1 0h1m1 0h1"/></svg></div>
+      <div style="flex:1;min-width:220px">
+        <p style="margin:0 0 8px;font-weight:600;word-break:break-all">https://dating-nhile.vercel.app/</p>
+        <p class="why" style="margin:0 0 10px">Mở thử trên điện thoại. Chỉ đưa địa chỉ và mã này cho khách. Không chia sẻ địa chỉ của trang đội này ra ngoài.</p>
+        <p style="margin:0"><a class="btn alt" href="https://dating-nhile.vercel.app/" target="_blank" rel="noopener" style="display:inline-block;text-decoration:none">Mở trang khách</a></p>
+      </div>
     </div>
   </div>
 
   <div class="item" style="margin-top:22px">
-    <header><h3>Từ Form A ra bản đồ kết nối (Thùy làm từ xa)</h3><span class="meta">Chạy lúc 12:50, sau khi đóng Form A</span></header>
-    <p class="why">Ngân và các bạn ở phòng không cần chạm vào phần này. Thùy ở nhà lấy bảng Form A, bỏ cột số điện thoại, cột “đã học Là Chính Mình chưa” và cột “mức dùng AI”, dán vào AI cùng câu lệnh dưới, rồi đưa kết quả vào trang bản đồ kết nối (dựng trên Vercel). Link và QR của trang gửi cho La Hân để in.</p>
+    <header><h3>Nối trang khách với Google Sheet</h3><span class="meta">Thùy làm một lần, khoảng 5 phút</span></header>
+    <ol class="why" style="padding-left:20px;margin:8px 0 0">
+      <li>Mở Sheet → Tiện ích mở rộng → Apps Script.</li>
+      <li>Dán toàn bộ file <code>thiet-lap/apps-script.gs</code> (trong kho GitHub của dự án) rồi lưu. Chạy hàm <b>setup</b> một lần, cho phép quyền.</li>
+      <li>Triển khai → Ứng dụng web. Thực thi với tư cách <b>Tôi</b>, ai có quyền truy cập: <b>Bất kỳ ai</b>. Copy địa chỉ có đuôi <code>/exec</code>.</li>
+      <li>Gửi địa chỉ đó cho Claude để dán vào trang khách. Chưa dán thì trang khách chỉ chạy bản thử, chưa gửi gì về Sheet.</li>
+    </ol>
+  </div>
+
+  <div class="item" style="margin-top:22px">
+    <header><h3>Từ Form A ra Bản đồ kết nối (Thùy làm từ xa)</h3><span class="meta">Chạy lúc 12:50, sau khi đóng Form A</span></header>
+    <ol class="why" style="padding-left:20px;margin:8px 0 10px">
+      <li>Trong Sheet: menu <b>Dating → Tạo Bản đồ từ Form A</b>. Tab <b>BanDo</b> chỉ có những người đã đồng ý, không có số điện thoại.</li>
+      <li>Copy 5 cột đầu của tab BanDo (tên, nghề, 3 từ, đang tìm, có thể giúp) dán vào AI cùng câu lệnh dưới.</li>
+      <li>Dán kết quả AI vào 4 cột cuối: <b>gap1, ly1, gap2, ly2</b>. Khách tải lại Bản đồ trên trang khách là thấy.</li>
+    </ol>
     <pre class="prompt" id="promptTxt">Đây là bảng thông tin 15 người trong buổi Dating with NhiLe Team, mỗi dòng một người.
-1. Lập bản đồ kết nối, mỗi người một thẻ, xếp theo tên. Mỗi thẻ gồm: tên, nghề hay đang làm gì, 3 từ tả mình, đang tìm gì, có thể giúp ai.
-2. Dưới mỗi thẻ, gợi ý 2 người nên gặp, kèm một câu lý do dựa trên “đang tìm gì” và “có thể giúp ai”.
-3. Không thêm bất kỳ thông tin nào ngoài bảng. Viết tiếng Việt đời thường, ngắn.</pre>
+Với mỗi người, chọn 2 người khác nên gặp, kèm một câu lý do ngắn dựa trên “đang tìm gì” và “có thể giúp ai”.
+Trả về bảng 5 cột: tên, người nên gặp thứ nhất, lý do, người nên gặp thứ hai, lý do.
+Không thêm bất kỳ thông tin nào ngoài bảng. Viết tiếng Việt đời thường, ngắn.</pre>
     <div class="copyrow"><button class="btn alt" data-copy="promptTxt">Copy câu lệnh</button><span class="hint" data-fb></span></div>
   </div>
 </section>
@@ -378,10 +387,10 @@ const PH={kn:'p-kn',br:'p-br',nk:'p-nk'};
 const M=[
 {id:1,n:'Chào nhau + Form A',t:'12:30–12:40',min:10,ph:'kn',tools:['Form A'],
  why:'Vào cửa nhẹ, có chỗ ngồi, có bánh, có người chào. Đồng thời lấy dữ liệu đầu vào cho bản đồ kết nối.',
- bring:['Thẻ tên đã đóng mộc','1 thẻ mẫu có mộc đặt ở mỗi bàn','Bánh để sẵn trên bàn','QR Form A in lớn','Nhạc nền vui'],
- who:[['La Hân','Đưa thẻ tên, để QR Form A ngay chỗ đó'],['Thái Tâm','Đứng cạnh, giúp khách quét Form A'],['Hương hoặc Duy','Phụ giúp quét (một người), người kia quay'],['Ngân','Đón khách, 12:37 mời đảo bàn theo mộc'],['Thùy','Mở Form A từ xa']],
+ bring:['Thẻ tên đã đóng mộc','1 thẻ mẫu có mộc đặt ở mỗi bàn','Bánh để sẵn trên bàn','QR trang khách in lớn (1 mã mỗi bàn)','Nhạc nền vui'],
+ who:[['La Hân','Đưa thẻ tên, để QR trang khách ngay chỗ đó'],['Thái Tâm','Đứng cạnh, giúp khách quét Form A'],['Hương hoặc Duy','Phụ giúp quét (một người), người kia quay'],['Ngân','Đón khách, 12:37 mời đảo bàn theo mộc'],['Thùy','Mở Form A từ xa']],
  says:['“Bạn điền giúp tụi mình 1 phút để check-in nha.” (Thái Tâm hay bạn phụ nói, không nhắc AI)','Lúc 12:37, Ngân mời đảo bàn: “Bạn nhìn con mộc trên thẻ tên của mình, tìm bàn có con mộc giống vậy và ngồi xuống nha.”'],
- steps:[['','Trước giờ: bánh để sẵn trên 3 bàn. Mỗi bàn đặt 1 thẻ mẫu có con mộc riêng. Thẻ tên của khách đã đóng mộc từ trước, mỗi thẻ thuộc một trong ba mộc, không phân biệt người mới hay cũ.'],['','Khách vào, La Hân đưa thẻ tên. QR Form A để ngay chỗ đó, khách quét và điền. Khách ngồi bàn nào cũng được.'],['','Khoảng 12:37, Ngân mời đảo bàn: ai cũng về bàn có mộc trùng với thẻ tên mình. Mỗi bàn khoảng 5 người, và người quen bị xáo trộn.'],['','Ngân đi vòng chào, hỏi han vài câu, ưu tiên ngồi cạnh người mới.']],
+ steps:[['','Trước giờ: bánh để sẵn trên 3 bàn. Mỗi bàn đặt 1 thẻ mẫu có con mộc riêng. Thẻ tên của khách đã đóng mộc từ trước, mỗi thẻ thuộc một trong ba mộc, không phân biệt người mới hay cũ.'],['','Khách vào, La Hân đưa thẻ tên. QR trang khách để ngay chỗ đó, khách quét, bấm “Điền thẻ giới thiệu” (Form A) và điền. Khách ngồi bàn nào cũng được.'],['','Khoảng 12:37, Ngân mời đảo bàn: ai cũng về bàn có mộc trùng với thẻ tên mình. Mỗi bàn khoảng 5 người, và người quen bị xáo trộn.'],['','Ngân đi vòng chào, hỏi han vài câu, ưu tiên ngồi cạnh người mới.']],
  off:'Khách đến trễ vẫn nhận thẻ, điền Form A và ngồi vào bàn có mộc trùng thẻ. Form A đóng lúc 12:50. Ai điền trễ thì thêm vào bản đồ kết nối nếu kịp, không kịp thì bỏ qua.'},
 {id:2,n:'What you feel like saying',t:'12:40–12:50',min:10,ph:'kn',tools:['Chỉ nói'],
  why:'Mở lời nhẹ ngay tại bàn. Người hướng nội có chỗ an toàn để nói trước. Đây là văn hóa của NhiLe Team, giữ nguyên.',
@@ -429,14 +438,14 @@ const M=[
 
 const LANES=[
 ['Ngân (host)','Đón khách, mời đảo bàn theo mộc','Đánh chuông, giữ lượt','Giao nhiệm vụ, đổi vòng, đếm “ai đủ?”','Dẫn quét QR, đọc số đo, câu cầu','Nghỉ','Dẫn bao lì xì, kể chuyện, thư','Mời quét Form B'],
-['La Hân','Đưa thẻ tên, để QR Form A','Nhìn bàn nào im','Giữ giờ, ghi giờ người đủ đầu tiên','Nhận tin XANH/ĐỎ, phát thẻ tò mò','Nhắc ai chưa viết thẻ tò mò','Phát giấy, phong bì','Giúp ai chưa quét'],
+['La Hân','Đưa thẻ tên, để QR trang khách','Nhìn bàn nào im','Giữ giờ, ghi giờ người đủ đầu tiên','Nhận tin XANH/ĐỎ, phát thẻ tò mò','Nhắc ai chưa viết thẻ tò mò','Phát giấy, phong bì','Giúp ai chưa quét'],
 ['Thái Tâm','Giúp khách quét Form A','Ngồi bàn im nói trước','Dẫn người lẻ vào cặp','','Dẫn brain gym, văn nghệ','Ngồi nhóm lẻ nếu cần',''],
 ['Hương, Duy','Một người phụ giúp quét','Quay','Quay','Quay','Quay','Dừng quay mặt khách','Chụp ảnh chung'],
 ['Thùy (từ xa)','Mở Form A','Xem số người điền','12:50 đóng Form A, chạy AI','13:10 nhắn XANH/ĐỎ + số phút','','','Form B đã mở, theo dõi']
 ];
 const ROSTER=[
 ['Tuyết Ngân','Host, MC','Dẫn cả buổi theo 7 mục. Nghỉ thật ở mục 5.'],
-['Chị La Hân','Hậu cần','Giấy tờ, đồ dùng. Đầu buổi đưa thẻ tên và để QR Form A. Giữ giờ và ghi số đo. Cầm điện thoại nhận tin của Thùy.'],
+['Chị La Hân','Hậu cần','Giấy tờ, đồ dùng. Đầu buổi đưa thẻ tên và để QR trang khách. Giữ giờ và ghi số đo. Cầm điện thoại nhận tin của Thùy.'],
 ['Thái Tâm','Check-in, brain gym, văn nghệ','Đầu buổi giúp khách quét Form A. Từ mục 5 dẫn brain gym và văn nghệ.'],
 ['Hương và Duy','Quay phim','Một trong hai phụ giúp khách quét Form A đầu buổi. Một người chụp ảnh chung ở mục 7.'],
 ['Thùy (Tyna)','IT phía sau, ở nhà','Form A, Form B, bản đồ kết nối AI. Không điều hành buổi. Thao tác AI thay cả đội vì ở phòng không có máy.']
@@ -464,7 +473,7 @@ const FB=[
 const OPEN=[
 ['8 câu bao lì xì','Ngân gửi La Hân file câu hỏi từ bản 10/10 để in.'],
 ['Câu chuyện lớp 9','Ngân viết và tập nói, khoảng 3 phút.'],
-['Trang bản đồ kết nối','Thùy dựng cùng Claude ngày mai trước buổi (Vercel). Có link thì gửi QR cho La Hân in. Chưa rõ giờ in.'],
+['Trang khách (Form A, Bản đồ, Form B)','Đã dựng ở dating-nhile.vercel.app. Còn thiếu: Thùy nối Google Sheet (dán mã Apps Script, gửi địa chỉ /exec cho Claude) và gửi QR cho La Hân in. Chưa rõ giờ in.'],
 ['Nhóm chat của buổi','Chưa rõ nền tảng. Cần một nhóm để Thùy nhắn XANH/ĐỎ cho La Hân.'],
 ['Nhắn khách sau buổi','Chưa rõ ai nhắn. Hạn nhắn: 20/10.'],
 ['Quay phim mục 6','Đề xuất dừng quay mặt khách ở bao lì xì và viết thư. Thùy chốt.']
@@ -530,55 +539,7 @@ function calc(){const a=$('#c1').value||'___',b=$('#c2').value||'___',c=$('#c3')
   $('#calcOut').innerHTML=`<b>Ngân nói (câu phụ, sau câu hỏi):</b> “Người nhanh nhất mất ${a} phút. Cả phòng trung bình được ${b} người trong 15 phút. AI làm cả phòng mất ${c} phút.”`}
 ['c1','c2','c3'].forEach(id=>$('#'+id).addEventListener('input',calc));calc();
 
-/* forms */
-const ytxt=(id,label,tag,ph)=>`<div class="q"><label for="${id}">${label}</label>${tag?`<div class="tag">${tag}</div>`:''}<input type="text" id="${id}" placeholder="${ph||''}"></div>`;
-const VIS='<span class="vis">Hiện trong bản đồ kết nối</span>',HID='<span class="hid">Chỉ team thấy</span>';
-$('#aBody').innerHTML=
- ytxt('a1','Tên bạn',VIS,'Ví dụ: Lan Chi')+
- ytxt('a2','Số điện thoại hoặc Zalo',HID+'<span>Dùng để nối với form cuối buổi</span>','')+
- ytxt('a3','Nghề, hoặc bạn đang làm gì',VIS,'')+
- `<div class="q"><label for="a4">Bạn đang tìm gì?</label><div class="tag">${VIS}</div><textarea id="a4"></textarea></div>`+
- ytxt('a5','3 từ tả bạn',VIS+'<span>Bạn tự khai, AI không đoán</span>','')+
- `<div class="q"><label for="a6">Bạn có thể giúp ai, giúp gì?</label><div class="tag">${VIS}</div><textarea id="a6"></textarea></div>`+
- `<div class="q"><div class="ql">Bạn đã học Là Chính Mình chưa?</div><div class="tag">${HID}<span>Để team gợi ý đúng bước tiếp</span></div><label class="opt"><input type="radio" name="a7"> Rồi</label><label class="opt"><input type="radio" name="a7"> Chưa</label></div>`+
- `<div class="q"><div class="ql">Hiện giờ bạn dùng AI ở mức nào?</div><div class="tag">${HID}<span>Làm mốc ban đầu, để team biết nên nói gì với bạn</span></div><label class="opt"><input type="radio" name="a9"> Chưa dùng bao giờ</label><label class="opt"><input type="radio" name="a9"> Thỉnh thoảng</label><label class="opt"><input type="radio" name="a9"> Hằng tuần</label><label class="opt"><input type="radio" name="a9"> Hằng ngày</label></div>`+
- `<label class="opt"><input type="checkbox" id="a8"><span>Thông tin trên, trừ số điện thoại hay Zalo, sẽ hiện cho 15 người trong buổi này xem, và team giữ để giúp mọi người kết nối sau buổi. <b>(bắt buộc)</b></span></label>`+
- `<button class="send" id="aSend">Gửi</button><div class="copyrow" style="margin-top:0"><button class="btn alt" data-copytxt="A">Copy bộ câu hỏi</button><span class="hint" data-fb></span></div>`;
-$('#aSend').addEventListener('click',()=>{if(!$('#a8').checked){$('#a8').focus();$('#a8').closest('label').style.outline='2px solid var(--bad)';return}
- $('#aBody').innerHTML='<div class="thanks"><b>Cảm ơn bạn!</b><br>Đây là bản thử, chưa gửi đi đâu.</div>'});
-
-$('#bBody').innerHTML=
- ytxt('b1','Số điện thoại hoặc Zalo (cùng số ở form đầu buổi)','','')+
- `<div class="q"><label for="b2">Một điều bạn mang về hôm nay</label><textarea id="b2"></textarea></div>`+
- `<div class="q"><div class="ql">Buổi hôm nay, bạn chấm mấy điểm?</div><div style="display:flex;gap:6px;flex-wrap:wrap">${[1,2,3,4,5].map(n=>`<label class="opt" style="border:1px solid var(--line);border-radius:6px;padding:6px 12px"><input type="radio" name="b3"> ${n}</label>`).join('')}</div></div>`+
- `<div class="q"><label for="b4">Điều gì chưa ổn (không bắt buộc)</label><textarea id="b4"></textarea></div>`+
- `<div class="q"><div class="ql">Bạn đã học Là Chính Mình chưa?</div><label class="opt"><input type="radio" name="b5" value="r"> Rồi</label><label class="opt"><input type="radio" name="b5" value="c"> Chưa</label></div>`+
- `<div class="branch" id="brR" hidden><div class="ql" style="font-weight:600;font-size:13.5px">Bước tiếp bạn muốn (chọn được nhiều)</div><label class="opt"><input type="checkbox"> Nhận giới thiệu người trong bản đồ kết nối</label><label class="opt"><input type="checkbox"> Nghe về lớp AI</label><label class="opt"><input type="checkbox"> Chưa cần lúc này</label></div>`+
- `<div class="branch" id="brC" hidden><div class="ql" style="font-weight:600;font-size:13.5px">Bước tiếp bạn muốn (chọn được nhiều)</div><label class="opt"><input type="checkbox"> Vào cộng đồng NhiLe Team</label><label class="opt"><input type="checkbox"> Nghe về lớp Là Chính Mình tháng 12 ở Đà Nẵng</label><label class="opt"><input type="checkbox"> Chưa cần lúc này</label></div>`+
- `<button class="send" id="bSend">Gửi</button><div class="copyrow" style="margin-top:0"><button class="btn alt" data-copytxt="B">Copy bộ câu hỏi</button><span class="hint" data-fb></span></div>`+
- `<p class="hint">Hai nhánh “bước tiếp” là Google Form rẽ nhánh theo câu “đã học chưa”. Bấm thử Rồi hoặc Chưa ở trên.</p>`;
-document.querySelectorAll('input[name=b5]').forEach(r=>r.addEventListener('change',()=>{$('#brR').hidden=r.value!=='r';$('#brC').hidden=r.value!=='c'}));
-$('#bSend').addEventListener('click',()=>{$('#bBody').innerHTML='<div class="thanks"><b>Cảm ơn bạn!</b><br>Đây là bản thử, chưa gửi đi đâu.</div>'});
-
-const TXT={
-A:`FORM A · Check-in (đóng 12:50)
-1. Tên bạn [ngắn, bắt buộc] · hiện trong bản đồ kết nối
-2. Số điện thoại hoặc Zalo [ngắn, bắt buộc] · chỉ team thấy
-3. Nghề, hoặc bạn đang làm gì [ngắn] · hiện
-4. Bạn đang tìm gì? [đoạn] · hiện
-5. 3 từ tả bạn [ngắn] · hiện
-6. Bạn có thể giúp ai, giúp gì? [đoạn] · hiện
-7. Bạn đã học Là Chính Mình chưa? [Rồi / Chưa] · chỉ team thấy
-8. Hiện giờ bạn dùng AI ở mức nào? [Chưa dùng bao giờ / Thỉnh thoảng / Hằng tuần / Hằng ngày] · chỉ team thấy
-9. [Ô tick, bắt buộc] Thông tin trên, trừ số điện thoại hay Zalo, sẽ hiện cho 15 người trong buổi này xem, và team giữ để giúp mọi người kết nối sau buổi.`,
-B:`FORM B · Cuối buổi
-1. Số điện thoại hoặc Zalo [ngắn, bắt buộc, cùng số với Form A]
-2. Một điều bạn mang về hôm nay [ngắn]
-3. Buổi hôm nay, bạn chấm mấy điểm? [thang 1 đến 5]
-4. Điều gì chưa ổn [đoạn, không bắt buộc]
-5. Bạn đã học Là Chính Mình chưa? [Rồi / Chưa] → rẽ nhánh
-   Nếu Rồi, bước tiếp bạn muốn [chọn nhiều]: Nhận giới thiệu người trong bản đồ kết nối / Nghe về lớp AI / Chưa cần lúc này
-   Nếu Chưa, bước tiếp bạn muốn [chọn nhiều]: Vào cộng đồng NhiLe Team / Nghe về lớp Là Chính Mình tháng 12 ở Đà Nẵng / Chưa cần lúc này`};
+const TXT={};
 function copyText(t,fb){
   const done=()=>{fb.textContent='Đã copy'};
   const old=()=>{const ta=document.createElement('textarea');ta.value=t;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();try{document.execCommand('copy');done()}catch(e){fb.textContent='Chưa copy được, chọn và copy tay'}ta.remove()};
@@ -591,20 +552,6 @@ document.addEventListener('click',e=>{
   copyText(t,fb);
 });
 
-
-/* danh ba mo phong */
-const DIR=[
-{n:'Lan Chi',j:'thiết kế nội thất',w:'tỉ mỉ, ấm, hay cười',s:'người làm ảnh sản phẩm',h:'tư vấn bố trí không gian nhỏ',m:[['Quốc Bảo','anh chụp ảnh sản phẩm'],['Thu Hà','chị cần người sắp xếp không gian']]},
-{n:'Quốc Bảo',j:'nhiếp ảnh',w:'chậm, kỹ, thẳng',s:'khách làm đồ handmade',h:'chụp ảnh sản phẩm',m:[['Thu Hà','chị làm đồ handmade'],['Lan Chi','chị cần ảnh cho dự án nội thất']]},
-{n:'Thu Hà',j:'làm đồ handmade',w:'nhẹ, tinh, kiên nhẫn',s:'người sắp xếp quầy hàng',h:'dạy làm nến thơm',m:[['Lan Chi','chị bố trí không gian'],['Quốc Bảo','anh chụp sản phẩm']]}
-];
-const norm=t=>t.toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'').replace(/đ/g,'d');
-$('#dBody').innerHTML='<div class="q"><label for="dq">Gõ tên của bạn</label><input type="text" id="dq" placeholder="Ví dụ: lan"></div><div id="dOut"></div><p class="hint">Mỗi người một thẻ, không có số điện thoại hay Zalo. Mở bằng QR, không cần đăng nhập. Ba người trong ví dụ là tên giả. Thử gõ: lan, bao, ha.</p>';
-function dRender(){const q=norm($('#dq').value.trim());const out=$('#dOut');
-  if(!q){out.innerHTML='<div class="hint">Chưa gõ gì. Gõ vài chữ của tên bạn.</div>';return}
-  const r=DIR.filter(d=>norm(d.n).includes(q));
-  out.innerHTML=r.length?r.map(d=>`<div class="dir"><div class="nm">${d.n}</div><div>Nghề: ${d.j}</div><div>3 từ: ${d.w}</div><div>Đang tìm: ${d.s}</div><div>Có thể giúp: ${d.h}</div><div class="meet"><b>Nên gặp:</b> ${d.m.map(x=>x[0]+', vì '+x[1]).join('. ')}.</div></div>`).join(''):'<div class="hint">Không thấy tên này. Thử gõ ít chữ hơn, hoặc nhờ bạn hậu cần.</div>';}
-$('#dq').addEventListener('input',dRender);$('#dq').value='lan';dRender();
 
 /* fallback + open */
 $('#fb').innerHTML=FB.map(f=>`<details class="fb"><summary>${f[0]}</summary><div>${f[1]}</div></details>`).join('');

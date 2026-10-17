@@ -20,7 +20,7 @@ body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16p
 .wm{display:flex;align-items:baseline;gap:8px}
 .wm b{font-family:var(--head);font-weight:400;font-size:26px;letter-spacing:.02em;text-transform:lowercase;color:var(--ink)}
 .wm span{font-size:13px;color:var(--muted);letter-spacing:.02em}
-.wm img{height:34px;display:block}
+.hero{display:block;width:150px;height:auto;margin:6px 0 26px}
 h1{font-family:var(--head);font-weight:400;font-size:40px;line-height:1.08;margin:0 0 10px;text-transform:uppercase;letter-spacing:.01em}
 h1 em{font-style:normal;color:var(--y)}
 h2{font-family:var(--head);font-weight:400;font-size:30px;line-height:1.12;margin:0 0 8px;text-transform:uppercase}
@@ -76,9 +76,8 @@ textarea{min-height:120px;resize:vertical}
 /* ===== CẤU HÌNH =====
    API: địa chỉ Apps Script (Thùy dán sau khi triển khai, xem khach/apps-script.gs).
    Để trống thì trang chạy chế độ demo, không gửi gì đi.
-   LOGO: đường dẫn file logo chính thức (ví dụ 'logo.svg') khi có. Để trống thì hiện chữ. */
+   Logo: file logo.png là logo NhiLe TEAM chính thức (bản nền đen, Tyna gửi 17/10), chỉ dùng ở trang chính, rộng 150px (luật brand: tối thiểu 110px). */
 const API='';
-const LOGO='';
 const $=s=>document.querySelector(s),app=$('#app');
 const norm=s=>(s||'').toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'').replace(/đ/g,'d').trim();
 const esc=s=>String(s==null?'':s).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -110,11 +109,12 @@ const DIR=[
 ];
 
 const st={a:{},i:0,list:A,key:'A',sending:false};
-const wm=()=>LOGO?`<span class="wm"><img src="${esc(LOGO)}" alt="Dating with NhiLe Team"></span>`:`<span class="wm"><b>dating</b><span>with NhiLe Team</span></span>`;
+const wm=()=>`<span class="wm"><b>dating</b><span>with NhiLe Team</span></span>`;
 const head=back=>`<div class="top"><span>${back?'<button class="back" onclick="home()">← Trang chính</button>':wm()}</span><span>CN 18/10</span></div>`;
 
 function home(){
- app.innerHTML=head(0)+`
+ app.innerHTML=`<div class="top"><span class="wm"><b>dating</b><span>with NhiLe Team</span></span><span>CN 18/10</span></div>
+ <img class="hero" src="logo.png" width="150" alt="NhiLe TEAM">
  <h1>Chào bạn, mình <em>kết nối</em> nhé.</h1>
  <p class="sub">Buổi hôm nay có 3 chỗ bạn cần tới trang này. Lúc nào cần, bạn bấm đúng nút đó.</p>
  <button class="go" onclick="startForm('A')"><span class="ic">A</span><span><b>Điền thẻ giới thiệu</b><small>Đầu buổi · khoảng 2 phút</small></span><span class="ar">›</span></button>
